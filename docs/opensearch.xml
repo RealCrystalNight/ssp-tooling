@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>ばぐとら研究所</ShortName> 
+<Url type="text/html" method="GET" template="http://ssp.shillest.net/search.html?cx=002480530622638085988%3Akm__evzil98&amp;cof=FORID%3A9&amp;ie=UTF-8&amp;q={searchTerms}&amp;sa=%E6%A4%9C+%E7%B4%A2" /> 
+<InputEncoding>UTF-8</InputEncoding> 
+<OutputEncoding>UTF-8</OutputEncoding>
+<Description>ばぐとら研究所のサイト全体の検索です。</Description> 
+<Image height="16" width="16" type="image/x-icon">http://ssp.shillest.net/favicon.ico</Image>
+<moz:SearchForm xmlns:moz="http://www.mozilla.org/2006/browser/search/">http://ssp.shillest.net/search.html</moz:SearchForm> 
+</OpenSearchDescription>

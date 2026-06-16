@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rdf:RDF
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:lang="ja">
+
+  <channel rdf:about="http://sspnormal.shillest.net/archive/rss.xml">
+    <title>SSP BUGTRAQ-Archive</title>
+    <link>http://sspnormal.shillest.net/archive/</link>
+    <description>SSP開発版・旧版の倉庫。</description>
+    <image rdf:resource="http://sspnormal.shillest.net/images/banner_nu.png"/>
+    <dc:date>2026-06-15T10:13:24+09:00</dc:date>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_31f.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_31d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_30d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_29d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_28d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_27d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_26d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_25d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_24d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_23d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_22d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_21d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_20d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_19d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_18d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_17d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_16d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_15d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_14d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_13d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_12d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_11d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_10d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_09d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_08d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_07d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_06d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_05d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_04d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_03d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_02d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_01d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_8_00d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_99d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_98d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_97d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_96d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_95d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_94d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_93d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_92d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_91d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_90d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_89d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_88d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_87d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_86d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_85d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_84d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_83d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_82d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_81d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_80d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_79d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_78d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_77d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_76d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_75d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_74d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_73d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_72d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_71d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_70d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_69d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_68d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_67d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_66d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_65d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_64d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_63d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_62d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_61d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_60d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_59d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_58d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_57d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_56d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_55d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_54d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_53d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_52d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_51d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_50d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_49d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_48d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_47d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_46d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_45d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_44d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_43d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_42d.exe"/>
+        <rdf:li rdf:resource="http://sspnormal.shillest.net/archive/ssp_2_7_41d.exe"/>
+      </rdf:Seq>
+    </items>
+  </channel>
+
+  <image rdf:about="http://sspnormal.shillest.net/images/banner_nu.png">
+    <title>SSP BUGTRAQ</title>
+    <link>http://sspnormal.shillest.net/</link>
+    <url>http://sspnormal.shillest.net/images/banner_nu.png</url>
+  </image>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_31f.exe">
+    <title>SSP 2.8.31 Fullset</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_31f.exe</link>
+    <dc:date>2026-06-15T10:13:24+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_31d.exe">
+    <title>SSP 2.8.31 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_31d.exe</link>
+    <dc:date>2026-06-15T10:13:23+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_30d.exe">
+    <title>SSP 2.8.30 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_30d.exe</link>
+    <dc:date>2026-06-14T15:55:38+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_29d.exe">
+    <title>SSP 2.8.29 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_29d.exe</link>
+    <dc:date>2026-06-12T15:59:02+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_28d.exe">
+    <title>SSP 2.8.28 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_28d.exe</link>
+    <dc:date>2026-06-12T12:29:29+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_27d.exe">
+    <title>SSP 2.8.27 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_27d.exe</link>
+    <dc:date>2026-06-02T16:20:32+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_26d.exe">
+    <title>SSP 2.8.26 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_26d.exe</link>
+    <dc:date>2026-06-01T21:37:48+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_25d.exe">
+    <title>SSP 2.8.25 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_25d.exe</link>
+    <dc:date>2026-05-30T19:49:41+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_24d.exe">
+    <title>SSP 2.8.24 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_24d.exe</link>
+    <dc:date>2026-05-28T12:33:16+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_23d.exe">
+    <title>SSP 2.8.23 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_23d.exe</link>
+    <dc:date>2026-05-22T05:24:55+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_22d.exe">
+    <title>SSP 2.8.22 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_22d.exe</link>
+    <dc:date>2026-05-21T09:34:34+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_21d.exe">
+    <title>SSP 2.8.21 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_21d.exe</link>
+    <dc:date>2026-05-18T16:59:46+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_20d.exe">
+    <title>SSP 2.8.20 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_20d.exe</link>
+    <dc:date>2026-05-17T06:10:55+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_19d.exe">
+    <title>SSP 2.8.19 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_19d.exe</link>
+    <dc:date>2026-05-16T21:39:06+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_18d.exe">
+    <title>SSP 2.8.18 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_18d.exe</link>
+    <dc:date>2026-05-15T21:12:01+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_17d.exe">
+    <title>SSP 2.8.17 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_17d.exe</link>
+    <dc:date>2026-05-15T04:54:38+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_16d.exe">
+    <title>SSP 2.8.16 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_16d.exe</link>
+    <dc:date>2026-05-12T10:44:43+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_15d.exe">
+    <title>SSP 2.8.15 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_15d.exe</link>
+    <dc:date>2026-05-12T05:00:10+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_14d.exe">
+    <title>SSP 2.8.14 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_14d.exe</link>
+    <dc:date>2026-05-11T14:08:22+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_13d.exe">
+    <title>SSP 2.8.13 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_13d.exe</link>
+    <dc:date>2026-05-10T10:01:12+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_12d.exe">
+    <title>SSP 2.8.12 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_12d.exe</link>
+    <dc:date>2026-05-09T22:45:31+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_11d.exe">
+    <title>SSP 2.8.11 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_11d.exe</link>
+    <dc:date>2026-05-09T17:51:51+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_10d.exe">
+    <title>SSP 2.8.10 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_10d.exe</link>
+    <dc:date>2026-05-06T11:35:47+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_09d.exe">
+    <title>SSP 2.8.09 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_09d.exe</link>
+    <dc:date>2026-05-01T14:39:17+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_08d.exe">
+    <title>SSP 2.8.08 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_08d.exe</link>
+    <dc:date>2026-04-27T04:41:52+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_07d.exe">
+    <title>SSP 2.8.07 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_07d.exe</link>
+    <dc:date>2026-04-24T21:26:11+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_06d.exe">
+    <title>SSP 2.8.06 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_06d.exe</link>
+    <dc:date>2026-04-24T17:20:32+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_05d.exe">
+    <title>SSP 2.8.05 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_05d.exe</link>
+    <dc:date>2026-04-24T09:09:48+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_04d.exe">
+    <title>SSP 2.8.04 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_04d.exe</link>
+    <dc:date>2026-04-22T08:37:56+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_03d.exe">
+    <title>SSP 2.8.03 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_03d.exe</link>
+    <dc:date>2026-04-19T17:18:55+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_02d.exe">
+    <title>SSP 2.8.02 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_02d.exe</link>
+    <dc:date>2026-04-17T21:09:27+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_01d.exe">
+    <title>SSP 2.8.01 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_01d.exe</link>
+    <dc:date>2026-04-16T21:08:59+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_8_00d.exe">
+    <title>SSP 2.8.00 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_8_00d.exe</link>
+    <dc:date>2026-04-16T20:38:24+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_99d.exe">
+    <title>SSP 2.7.99 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_99d.exe</link>
+    <dc:date>2026-04-15T09:32:52+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_98d.exe">
+    <title>SSP 2.7.98 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_98d.exe</link>
+    <dc:date>2026-04-12T20:34:02+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_97d.exe">
+    <title>SSP 2.7.97 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_97d.exe</link>
+    <dc:date>2026-04-12T06:50:49+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_96d.exe">
+    <title>SSP 2.7.96 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_96d.exe</link>
+    <dc:date>2026-04-11T06:06:50+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_95d.exe">
+    <title>SSP 2.7.95 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_95d.exe</link>
+    <dc:date>2026-04-09T15:51:31+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_94d.exe">
+    <title>SSP 2.7.94 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_94d.exe</link>
+    <dc:date>2026-04-07T12:40:27+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_93d.exe">
+    <title>SSP 2.7.93 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_93d.exe</link>
+    <dc:date>2026-04-06T09:14:34+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_92d.exe">
+    <title>SSP 2.7.92 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_92d.exe</link>
+    <dc:date>2026-03-31T15:21:30+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_91d.exe">
+    <title>SSP 2.7.91 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_91d.exe</link>
+    <dc:date>2026-03-29T16:41:06+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_90d.exe">
+    <title>SSP 2.7.90 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_90d.exe</link>
+    <dc:date>2026-03-28T22:22:21+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_89d.exe">
+    <title>SSP 2.7.89 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_89d.exe</link>
+    <dc:date>2026-03-27T16:12:45+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_88d.exe">
+    <title>SSP 2.7.88 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_88d.exe</link>
+    <dc:date>2026-03-25T12:45:16+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_87d.exe">
+    <title>SSP 2.7.87 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_87d.exe</link>
+    <dc:date>2026-03-24T19:36:28+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_86d.exe">
+    <title>SSP 2.7.86 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_86d.exe</link>
+    <dc:date>2026-03-23T19:33:13+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_85d.exe">
+    <title>SSP 2.7.85 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_85d.exe</link>
+    <dc:date>2026-03-22T19:31:32+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_84d.exe">
+    <title>SSP 2.7.84 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_84d.exe</link>
+    <dc:date>2026-03-22T08:27:58+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_83d.exe">
+    <title>SSP 2.7.83 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_83d.exe</link>
+    <dc:date>2026-03-21T17:15:36+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_82d.exe">
+    <title>SSP 2.7.82 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_82d.exe</link>
+    <dc:date>2026-03-20T04:41:24+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_81d.exe">
+    <title>SSP 2.7.81 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_81d.exe</link>
+    <dc:date>2026-03-18T12:32:45+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_80d.exe">
+    <title>SSP 2.7.80 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_80d.exe</link>
+    <dc:date>2026-03-15T14:30:54+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_79d.exe">
+    <title>SSP 2.7.79 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_79d.exe</link>
+    <dc:date>2026-03-15T12:04:13+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_78d.exe">
+    <title>SSP 2.7.78 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_78d.exe</link>
+    <dc:date>2026-03-14T08:32:21+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_77d.exe">
+    <title>SSP 2.7.77 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_77d.exe</link>
+    <dc:date>2026-03-13T21:33:18+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_76d.exe">
+    <title>SSP 2.7.76 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_76d.exe</link>
+    <dc:date>2026-03-13T14:52:53+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_75d.exe">
+    <title>SSP 2.7.75 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_75d.exe</link>
+    <dc:date>2026-03-08T20:55:03+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_74d.exe">
+    <title>SSP 2.7.74 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_74d.exe</link>
+    <dc:date>2026-03-07T20:29:49+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_73d.exe">
+    <title>SSP 2.7.73 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_73d.exe</link>
+    <dc:date>2026-03-05T07:55:53+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_72d.exe">
+    <title>SSP 2.7.72 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_72d.exe</link>
+    <dc:date>2026-03-03T08:43:07+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_71d.exe">
+    <title>SSP 2.7.71 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_71d.exe</link>
+    <dc:date>2026-03-01T15:44:59+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_70d.exe">
+    <title>SSP 2.7.70 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_70d.exe</link>
+    <dc:date>2026-02-28T13:41:34+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_69d.exe">
+    <title>SSP 2.7.69 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_69d.exe</link>
+    <dc:date>2026-02-27T21:37:44+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_68d.exe">
+    <title>SSP 2.7.68 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_68d.exe</link>
+    <dc:date>2026-02-26T21:24:40+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_67d.exe">
+    <title>SSP 2.7.67 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_67d.exe</link>
+    <dc:date>2026-02-24T05:20:48+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_66d.exe">
+    <title>SSP 2.7.66 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_66d.exe</link>
+    <dc:date>2026-02-23T10:31:11+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_65d.exe">
+    <title>SSP 2.7.65 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_65d.exe</link>
+    <dc:date>2026-02-20T05:37:19+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_64d.exe">
+    <title>SSP 2.7.64 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_64d.exe</link>
+    <dc:date>2026-02-19T21:36:17+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_63d.exe">
+    <title>SSP 2.7.63 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_63d.exe</link>
+    <dc:date>2026-02-19T07:59:18+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_62d.exe">
+    <title>SSP 2.7.62 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_62d.exe</link>
+    <dc:date>2026-02-18T05:06:03+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_61d.exe">
+    <title>SSP 2.7.61 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_61d.exe</link>
+    <dc:date>2026-02-17T21:46:11+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_60d.exe">
+    <title>SSP 2.7.60 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_60d.exe</link>
+    <dc:date>2026-02-16T13:15:43+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_59d.exe">
+    <title>SSP 2.7.59 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_59d.exe</link>
+    <dc:date>2026-02-13T14:10:43+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_58d.exe">
+    <title>SSP 2.7.58 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_58d.exe</link>
+    <dc:date>2026-02-13T08:35:45+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_57d.exe">
+    <title>SSP 2.7.57 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_57d.exe</link>
+    <dc:date>2026-02-12T16:03:42+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_56d.exe">
+    <title>SSP 2.7.56 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_56d.exe</link>
+    <dc:date>2026-02-12T08:44:41+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_55d.exe">
+    <title>SSP 2.7.55 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_55d.exe</link>
+    <dc:date>2026-02-11T21:05:41+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_54d.exe">
+    <title>SSP 2.7.54 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_54d.exe</link>
+    <dc:date>2026-02-08T15:01:44+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_53d.exe">
+    <title>SSP 2.7.53 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_53d.exe</link>
+    <dc:date>2026-02-05T09:12:24+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_52d.exe">
+    <title>SSP 2.7.52 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_52d.exe</link>
+    <dc:date>2026-02-04T13:36:07+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_51d.exe">
+    <title>SSP 2.7.51 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_51d.exe</link>
+    <dc:date>2026-02-02T21:12:30+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_50d.exe">
+    <title>SSP 2.7.50 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_50d.exe</link>
+    <dc:date>2026-02-01T10:00:02+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_49d.exe">
+    <title>SSP 2.7.49 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_49d.exe</link>
+    <dc:date>2026-01-31T12:07:24+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_48d.exe">
+    <title>SSP 2.7.48 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_48d.exe</link>
+    <dc:date>2026-01-29T10:52:02+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_47d.exe">
+    <title>SSP 2.7.47 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_47d.exe</link>
+    <dc:date>2026-01-28T12:56:16+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_46d.exe">
+    <title>SSP 2.7.46 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_46d.exe</link>
+    <dc:date>2026-01-28T11:43:52+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_45d.exe">
+    <title>SSP 2.7.45 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_45d.exe</link>
+    <dc:date>2026-01-27T22:14:38+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_44d.exe">
+    <title>SSP 2.7.44 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_44d.exe</link>
+    <dc:date>2026-01-24T12:03:42+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_43d.exe">
+    <title>SSP 2.7.43 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_43d.exe</link>
+    <dc:date>2026-01-22T20:26:46+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_42d.exe">
+    <title>SSP 2.7.42 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_42d.exe</link>
+    <dc:date>2026-01-22T09:29:09+09:00</dc:date>
+  </item>
+
+  <item rdf:about="http://sspnormal.shillest.net/archive/ssp_2_7_41d.exe">
+    <title>SSP 2.7.41 Diff</title>
+    <link>//sspnormal.shillest.net/archive/ssp_2_7_41d.exe</link>
+    <dc:date>2026-01-21T16:33:32+09:00</dc:date>
+  </item>
+
+</rdf:RDF>

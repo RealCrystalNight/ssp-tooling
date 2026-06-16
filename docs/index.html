@@ -1,111 +1,850 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" xmlns:og="http://ogp.me/ns#">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SSP Tooling - SSP 汉化工具包</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-style-type" content="text/css" />
+
+	<link rel="stylesheet" href="site.css" type="text/css" media="all" charset="UTF-8" />
+
+	<title>独立伺か研究施設 ばぐとら研究所</title>
+
+	<meta name="twitter:card" content="summary" />
+	<meta property="og:title" content="ばぐとら研究所/SSP BUGTRAQ" />
+	<meta property="og:description" content="伺か互換ランタイムSSPの公式配布ページ＋ユーザー＆開発者向け情報ポータル" />
+	<meta property="og:image" content="https://ssp.shillest.net/image/auth_icon.png" />
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@nikolat/makibishi@0"></script>
+	<script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+	
+	<script type="text/javascript">
+Hatena.Star.SiteConfig = {
+  entryNodes: {
+    'p.reaction': {
+      uri: 'document.location',
+      title: 'document.title',
+      container: 'span.hstar'
+    }
+  }
+};
+
+async function fetchCounterValue() {
+  try {
+    const response = await fetch('/counter.cgi');
+    const data = await response.json();
+    return data.count;
+  } catch (error) {
+    console.error('Failed to fetch counter value:', error);
+    return null;
+  }
+}
+
+function updateCounterDisplay(count) {
+  const counterElement = document.getElementById('counter');
+  counterElement.innerHTML = ''; // 既存のカウンター表示をクリア
+
+  // カウント値を7桁の文字列に変換
+  const countStr = count.toString();
+  
+  // 各桁の画像を表示
+  for (let digit of countStr) {
+    const img = document.createElement('img');
+    img.src = `counter/u_nyanpuppu__${digit}.png`;
+    img.classList.add('digit');
+    counterElement.appendChild(img);
+  }
+}
+
+async function initializeCounter() {
+  const count = await fetchCounterValue();
+  if (count !== null) {
+    updateCounterDisplay(count);
+  }
+}
+
+async function contentLoaded() {
+	await initializeCounter();
+}
+
+// 初期化
+document.addEventListener("DOMContentLoaded", contentLoaded);
+	</script>
+
+	<!--[if lte IE 6]>
+<style type="text/css">
+ul.pulldown-menu {
+behavior: url("csshover.htc");
+}
+html {
+overflow-x: hidden;
+overflow-y: scroll;
+}
+</style>
+<![endif]-->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="keywords" content="伺か,SSP,デスクトップマスコット" />
+<meta name="fediverse:creator" content="@ponapalt@ukadon.shillest.net" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="ばぐとら研究所サイト内検索" />
+
+<link rel="alternate" type="application/rss+xml" title="SSP Release Feed" href="/archive/rss.xml" />
+
+<link rel="alternate" type="application/x-nar" title="Emily/Phase4" href="/ghost/emily4.nar" />
+<link rel="alternate" type="application/x-nar" title="the MobileMaster" href="/ghost/mobilemaster.nar" />
+<link rel="alternate" type="application/x-nar" title="このみ3rd/Reloaded" href="/ghost/K3R.nar" />
+<link rel="alternate" type="application/x-nar" title="レジ打ちファイター翔子" href="/ghost/syoko.nar" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-2M5Y01T5EZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2M5Y01T5EZ');
+</script>
+
+	<style type="text/css">
+	  #counter {
+	    display: inline;
+	    vertical-align: middle;
+	  }
+	  .digit {
+	    width: 20px; /* 画像の幅 */
+	    height: 20px; /* 画像の高さ */
+	  }
+	</style>
 </head>
+
 <body>
 
-<div id="header">
-  <div class="logo">SSP Tooling</div>
-  <div class="subtitle">SSP 汉化工具包 / SSP Sinicization Toolkit</div>
+<table summary="header" class="header-footer">
+<tbody>
+<tr>
+<td class="title-left">
+<a href="./"><img src="image/icon.png" width="60" height="60" alt="ICON" /><img src="image/title.png" width="290" height="60" alt="ばぐとら事務所/研究所" /></a>
+</td>
+<td class="title-right">
+
+<div style="color: #666666;">SSP・その他伺か関連ソフトウェアの開発・研究施設</div>
+
+<div style="padding-top: 5px;">
+<form action="/search.html" id="cse-search-box" style="margin: 0px 2px 0px 2px; padding: 0px;">
+サイト内検索：
+<input type="hidden" name="cx" value="002480530622638085988:km__evzil98" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" size="31" style="margin: 0px 2px 0px 2px; padding: 0px;" />
+<input type="submit" name="sa" value="検 索" style="margin: 0px 2px 0px 2px; padding: 2px 8px;" />
+</form>
 </div>
 
-<div id="nav">
-  <a href="#download">下载 / Download</a>
-  <a href="#about">关于 / About</a>
-  <a href="#usage">使用 / Usage</a>
-  <a href="#changelog">更新 / Changelog</a>
-  <a href="https://ssp.shillest.net/" target="_blank">官方 / Official</a>
+<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&lang=ja"></script>
+
+</td>
+</tr>
+
+
+
+<tr>
+<td class="menu" colspan="2">
+
+<ul class="pulldown-menu">
+
+<li><a href="/">▽SSP</a> |
+    <ul>
+    <li style="width: 9em;"><a href="/">SSPダウンロード</a></li>
+    <li style="width: 9em;"><a href="howto.html">インストール方法</a></li>
+    <li style="width: 9em;"><a href="archive.html">旧版アーカイブ</a></li>
+    </ul>
+</li>
+
+<li><a href="ghost.html">▽配布物</a> |
+    <ul>
+    <li style="width: 9em;"><a href="ghost.html">ゴースト</a></li>
+    <li style="width: 9em;"><a href="warehouse.html">倉庫/開発資料</a></li>
+    </ul>
+</li>
+
+<li><a href="about.html">▽研究所について</a> |
+    <ul>
+    <li style="width: 10em;"><a href="about.html">当研究所について</a></li>
+    <li style="width: 10em;"><a href="about-member.html">メンバー/提携</a></li>
+    </ul>
+</li>
+
+<li><a href="/bts/?project=ssp&amp;action=top">▽バグ報告・要望</a> |
+    <ul>
+    <li style="width: 11em;"><a href="https://ukiya.hatenadiary.org/entries/2009/11/27"><img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />バグ報告・要望の方法</a></li>
+    <li style="width: 11em;"><a href="https://bts.shillest.net/"><img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />報告用システム</a></li>
+   </ul>
+</li>
+
+<li><a href="//3001.de10.moe/">▽蟲取高速鉄道</a> |
+    <ul>
+    <li style="width: 11em;"><a href="//3001.de10.moe/">蟲取高速鉄道について</a></li>
+    <li style="width: 11em;"><a href="//3001.de10.moe/railway-service.html">ゴーストダウンロード</a></li>
+    <li style="width: 11em;"><a href="//3001.de10.moe/railway-vehicle.html">ゴースト紹介</a></li>
+    </ul>
+</li>
+
+<li><a href="antenna.html">通信施設</a>
+
+</ul>
+
+</td>
+</tr>
+<tr>
+<td class="breadcrumbs" colspan="2">
+&gt;&gt; トップ+SSP
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class ="main">
+<!-- *****HEADER***** -->
+
+<table summary="download">
+<tbody>
+<tr>
+
+<td style="width: auto; padding: 0.3em 1em 0.3em 0.3em; text-align: left; border-right: 1px solid #ddaabb; ">
+<h2>SSP 2.8.31</h2>
+
+<p class="reaction">
+<span class="makibishi"></span>
+<span class="hstar"></span>
+</p>
+
+<p>
+<img src="image/desktop_sample.png" alt="サンプル表示" />
+</p>
+
+<p><a href="howto.html">もっと知りたい...</a> / <a href="/ukadoc/ssphelp/">説明書</a></p>
+
+<p>最終更新<br />
+2026/06/15(Mon) 10:13:24</p>
+
+<p style="line-height: 0px;"><a href="//github.com/RealCrystalNight/ssp-tooling/releases/latest/download/ssp_2_8_31f.exe" title="Download Full Package"><img src="image/download_full.png" width="200" height="110" alt="Download Full Package" style="margin-bottom: 0px; padding-bottom: 0px;" /></a><br />
+<a href="//sspnormal.shillest.net/archive/ssp_2_8_31f.zip" title="Download Full Zip Package"><img src="image/download_full_zip.png" width="200" height="80" alt="Download Full Zip Package" style="margin-top: 0px; padding-top: 0px;" /></a>
+</p>
+<p style="line-height: 0px;"><a href="//sspnormal.shillest.net/archive/ssp_2_8_31d.exe" title="Download Update Package"><img src="image/download_diff.png" width="200" height="60" alt="Download Update Package" style="margin-bottom: 0px; padding-bottom: 0px;" /></a><br />
+<a href="//sspnormal.shillest.net/archive/ssp_2_8_31d.zip" title="Download Update Zip Package"><img src="image/download_diff_zip.png" width="200" height="65" alt="Download Update Zip Package" style="margin-top: 0px; padding-top: 0px;" /></a>
+</p>
+
+</td>
+
+<td style="width: auto; padding: 0.3em 1em 0.3em 1em; text-align: left; border-right: 1px solid #ddaabb; ">
+
+<h2>Language Pack</h2>
+
+<p><a href="https://github.com/Koguri3108/SSP_de_langpack/releases">German Lang. Pack for <span style="font-weight: bold;">v2.7/2.8</span> by Koguri</a></p>
+<p><a href="https://github.com/steve02081504/ssp-sinicization/releases">Chinese Lang. Pack for <span style="font-weight: bold;">v2.7/2.8</span> by steve green</a></p>
+<p><a href="https://github.com/SmokyCinnamon/russian-ssp/releases">Russian Lang. Pack for v2.5/2.6 by SmokyCinnamon</a></p>
+
+<p><a href="etc/ssp_korean_pack_for_ssp_2_4_x_180915.zip">Korean Lang. Pack for v2.4 by Chiri</a></p>
+
+<h2>その他情報</h2>
+
+<p><a href="https://ponapalt.hatenablog.com/">更新履歴/CHANGELOG<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" /></a></p>
+<p><a href="/archive.html">旧バージョン/Old Archive</a></p>
+<p><span style="font-weight: bold;">インストール方法：</span>ダウンロード・実行・インストールボタンのみ！</p>
+<p><span style="font-weight: bold;">How to Install：</span>Download, Execute, and just push Install button!</p>
+
+<p>対応環境：
+<br />Windows 2000以降
+<br />または上記相当のWine互換環境
+<br />※Wine 10.0以降+Waylandでは、システムの仕様上の制約が原因で、ウインドウが移動できない問題が出る場合があります。Alt-マウスドラッグを試してみてください。
+<br />128MB程度の空きメモリ
+</p>
+
+<p>VirusTotalをはじめとした一括ウイルススキャンサイトで、有害判定となる場合がありますが、技術的に完全なチェックソフトは存在しないことによる擬陽性ですので、安心してお使いください。</p>
+
+<p><a href="https://ssp.shillest.net/avscan.txt">毎日ClamAVで最新版をウイルススキャンしています</a></p>
+
+<p>Win32/Wacatac.B!mlという名前で、割とよく<span style="font-weight: bold;">誤検知</span>が発生します。
+<br />その際は <span style="font-weight: bold;">ssp.exe と data\SSPH.exe を除外リスト</span>に入れてください。</p>
+
+<p style="font-size: large; margin-top: 5em;"><a href="https://scrapbox.io/uka-board/%E3%81%86%E3%81%8B%E3%81%BC%E3%83%BC%E3%81%A9_Index">うかぼーど 伺かリンク集</a></p>
+
+</td>
+
+</tr>
+</tbody>
+</table>
+
+<table summary="menu" class="maincontent">
+<tbody>
+<tr>
+
+<td class="maincontent-title" style="width: 49.5%;">
+一般
+</td>
+<td class="maincontent-spacer" style="width: 1%;">　</td>
+<td class="maincontent-title" style="width: 49.5%;">
+開発
+</td>
+
+</tr><tr>
+
+<td class="maincontent-content" style="width: 49.5%;">
+
+<h2 id="news">期間限定/お知らせ</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ukagakadreamteam.com/events/ghost_jam_2026/rules.html">Ghost Jam 2026</a><br />
+1週間のタイムリミット内でゴーストを開発して公開する企画<br />
+6/19 01:00:00～6/25 00:59:59
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ukadon.shillest.net/@stonebridgecat/116628494693032041">伺かゴースト感想会</a><br />
+自分以外の参加者のゴーストを起動して感想を書く感想交換会/ゴーストを起動さえできれば誰でも参加可<br />
+参加表明～6/25　開催7/1～7/25
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://note.com/lirueslab/n/n87d5b656df35">あなたの愛するゴーストを教えてください！</a> <a href="https://note.com/lirueslab/n/n2de7230d375f">企画説明</a>
+<br />伺か全般(自作じゃなくてもよい、ゴーストでなくてもよい)についての愛を自由に語る/描く(手段も自由)企画
+<br />1/1～6/30 <a href="https://x.com/search?q=%23%E6%84%9B%E3%82%B42026&src=typed_query&f=live">#愛ゴ2026(X)</a> <a href="https://ukadon.shillest.net/tags/%E6%84%9B%E3%82%B42026">#愛ゴ2026(Fed)</a>
+</p>
+
+<!--<hr />-->
+
+<h2 id="news_permanent">常設企画</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://teijima.blog.fc2.com/blog-entry-115.html">ゴロリとワクワク</a>
+<br />ゴーストにロリィタとかのkawaii服を着てもらうとワクワクするよね企画<br />期間指定なし <a href="https://x.com/hashtag/%E3%82%B4%E3%83%AD%E3%83%AA%E3%81%A8%E3%83%AF%E3%82%AF%E3%83%AF%E3%82%AF%E5%8F%82%E5%8A%A0%E7%B5%B5?src=hashtag_click&amp;f=live">#ゴロリとワクワク参加絵</a></p>
+
+<h2 id="news_history">終了済(配布/公開中)企画</h2>
+
+<ul>
+
+<li>
+<a href="https://x.com/maki_dry/status/1981724979319234900">うかーどこねくと 2025</a>
+<a href="https://utazifengchuiki.wixsite.com/mysite-1/%E3%82%84%E3%82%93%E3%81%8A%E3%81%94%E4%BC%81%E7%94%BB2">ヤンデレ弟ゴースト企画2</a>
+<a href="https://colorbox.saloon.jp/book/night/party.htm">星のうみで宴を</a>
+<a href="https://ukadon.shillest.net/@stonebridgecat/114805838016876107">ゴーストの感想会</a>
+</li>
+
+<li>
+<a href="https://ukagaka.dojin.com/">伺かアニバーサリー</a>
+<a href="https://cherry.narnaloader.ukagaka.net/ghost.php?ghost=yaminabe_okawari">ゴースト闇鍋（おかわり）</a>
+<a href="https://pictsquare.net/kmxj4ozjpjs83fhupkbrai0q2l91578g">伺か展覧会</a>
+<a href="https://ukawazurai.jimdofree.com/">うかるて</a>
+</li>
+
+<li>
+<a href="https://puniuka.nekoorinu.monster/">ぷにうか</a>
+<a href="https://lost-nd-xxx.hateblo.jp/entry/20240408/1712582174">異形頭2024</a>
+<a href="https://pictsquare.net/e7jk2pg8qfksaryera1z6u4klbarirbl">眼鏡と鬼オンリー</a>
+<a href="https://telegra.ph/%E4%BC%81%E7%94%BB%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E9%97%87%E9%8D%8B-12-04">ゴースト闇鍋</a>
+<a href="https://lost-nd-xxx.hateblo.jp/">里々技術記事2024春</a>
+</li>
+
+<li>
+<a href="https://shira-shiru.studio.site/">しらしる！</a>
+<a href="https://ghostslave.studio.site/">伺か奴隷市場</a>
+<a href="http://shell.vs.land.to/mensghost/">男子幽霊祭</a>
+</li>
+
+<li>
+<a href="https://ukagakadreamteam.com/wiki/event_list">GHOST JAMなどのイベント履歴</a>
+</li>
+
+<li>
+<a href="https://earlduant.blog.fc2.com/blog-entry-948.html">ゴーストマスカレード8</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-920.html">GM7</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-894.html">GM6</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-875.html">GM5</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-855.html">GM4</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-838.html">GM3</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-819.html">GM2</a>
+<a href="https://earlduant.blog.fc2.com/blog-entry-796.html">GM1</a>
+</li>
+
+<li>
+<a href="https://sites.google.com/view/ghost-luckybag2026/">嫌ゴ福袋2026</a> <a href="https://sites.google.com/view/ghost-luckybag2025">2025</a> <a href="https://sites.google.com/view/ghost-luckybag2024">2024</a>
+</li>
+
+<li>
+<a href="https://adventar.org/calendars/11651">伺的 Advent Calendar 2025-1</a> <a href="https://adventar.org/calendars/12631">25-2</a> <a href="https://adventar.org/calendars/10049">24-1</a> <a href="https://adventar.org/calendars/10662">24-2</a> <a href="https://adventar.org/calendars/8679">23</a> <a href="https://adventar.org/calendars/8310">22</a> <a href="https://adventar.org/calendars/7210">21</a> <a href="https://adventar.org/calendars/1472">16</a> <a href="https://adventar.org/calendars/1192">15</a> <a href="https://adventar.org/calendars/691">14</a> <a href="https://qiita.com/advent-calendar/2012/ukagaka">12</a> <a href="https://ponapalt.hatenablog.com/entry/20101225/1291723187">10</a>
+</li>
+
+</ul>
+
+<h2 id="whereis">この子どこ</h2>
+
+<p style="clear: both;">
+<img src="image/thumb_sakura.png" alt="さくら" style="border 1px #000; float: left; margin-right: 0.5em;" />さくら<br /><a href="https://ekicyou.github.io/about.html">どっとさくら(非公式)</a><br />おすすめ追加シェル(見た目)：<a href="https://coyokoya.net/ghost.html">水色さくら</a>
+</p>
+
+<p style="clear: both;">
+<img src="image/thumb_mayura.png" alt="まゆら" style="border 1px #000; float: left; margin-right: 0.5em;" />まゆら<br /><a href="https://suzuri.jp/junkers_high">JUNKER'S HIGH オフィシャルショップ</a><br />ちゃんと公式です。Youtubeもぜひ：<a href="https://www.youtube.com/@JunkersHigh">JUNKER'S HIGH</a>
+</p>
+
+<h2 style="clear: both;" id="social">ソーシャル</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://x.com/search?q=%23ukagaka%EF%BD%9C%23%E4%BC%BA%E3%81%8B%EF%BD%9C%23%E4%BC%BA%E3%81%8B%E8%AA%9E%E3%82%8A%E4%BC%9A&amp;src=typed_query&amp;f=live">Twitter : #伺か OR #ukagaka</a>
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ukadon.shillest.net/tags/ukagaka">Mastodon/Fediverse : #ukagaka</a>
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://ghost.sakura.tv/ukawiki/doku.php?id=ukagaka">伺かのDiscord</a><br />Discord for 伺か (雑談寄り？)
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://discord.gg/HbmheGWNEj">伺的なオンラインイベント</a><br />臨時イベント会場
+</p>
+
+<h2 id="link">外部リンク</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://tatakinov.github.io/ninix-kagari/index.html">ninix-kagari</a><br />LinuxなどWindows以外の環境向けのベースウェア（ゴースト実行ランタイム）
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://scrapbox.io/uka-board/%E3%81%86%E3%81%8B%E3%81%BC%E3%83%BC%E3%81%A9_Index">うかぼーど</a><br />伺かリンク集
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ghost-log.net/">ghost-log</a><br />伺か関連手動更新ニュースサイト
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://feed.ukagaka.net/">うかフィード</a><br />伺か関連ニュース投稿サイト
+</p>
+
+<p>
+<a href="https://ukagakadreamteam.com/wiki/home"><img src="image/banner/udream.png" width="200" height="40" alt="Disc-2" style="float: left; margin: 0px 4px;" />
+Ukagaka Dream Team Wiki</a><br />英語メインの伺かコミュニティポータル
+</p>
+
+<!--<p>
+<a href="http://disc2.s56.xrea.com/"><img src="image/banner/disc_2.gif" width="200" height="40" alt="Disc-2" style="float: left; margin: 0px 4px;" />
+Disc-2</a><br />伺か関連ニュースサイト
+</p>-->
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://togetter.com/li/706106">『伺か』を始めてみたい人のための簡易リンク集</a><br />とりあえずはじめに
+</p>
+
+<p>
+<a href="http://buynowforsale.shillest.net/ghosts/"><img src="image/banner/gcs-banner05.png" width="200" height="40" alt="ゴーストキャプターさくら" style="float: left; margin: 0px 4px;" />
+ゴーストキャプターさくら</a><br />ゴースト更新情報リスト(自動)
+</p>
+
+<p>
+<a href="http://jbbs.shitaraba.net/computer/44300/"><img src="image/banner/logokai.png" width="277" height="46" alt="ゴースト回覧板" style="float: left; margin: 0px 4px;" />
+ゴースト回覧板(3rd)</a><br />伺か関連スレッドフロート型掲示板
+</p>
+
+<p>
+<a href="http://colorbox.saloon.jp/ghost_nar/"><img src="image/banner/ukald_bana.png" width="200" height="40" alt="うかろだ" style="float: left; margin: 0px 4px;" />
+うかろだ。2nd </a><br />伺か関連アップローダ
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://ghosttown.mikage.jp/">GHOST TOWN / BALLOON TOWN</a><br />手動編集式ゴースト検索DB
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ghost-info.net/dokuwiki/">伺的な感想やレビューのWiki</a><br />ゴーストレビュー
+</p>
+
+<h2 id="directly_operated">直営</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://oekaki.shillest.net/">伺的お絵かき/投稿集会所</a><br />懐かしい？お絵かき掲示板
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="/ukadoc/ssphelp/">SSPヘルプ</a><br />SSPのつかいかた
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ukadon.shillest.net/">うかどん</a><br />Mastodon for 伺か
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" /><a href="http://fa-x.shillest.net/">SundayFish / FA-X</a><br />
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" /><a href="http://sakura.shillest.net/">SUN-A-LIGHT / Traveler Joe</a><br />
+nanika.jpのドメイン管理状況が不明のため、以上の通りshillest.net以下に収容しています。<br />
+</p>
+
+
+<h2 id="desktop_mascot">ですくとっぷますこっとっぽい？</h2>
+
+<ul>
+
+<li>
+<a href="https://openai.com/ja-JP/codex/">OpenAI Codex</a> <a href="https://developers.openai.com/codex/app/settings#codex-pets">コーディング支援用マスコット</a> <a href="https://x.com/nukonuko/status/2050280687819960476">カスタム例</a>
+</li>
+
+<li>
+<a href="https://www.microsoft.com/ja-jp/area/atlife/CopilotKeyboard">Microsoft Copilot Keyboard</a> IME + LLM支援 + マスコット
+</li>
+
+<li>
+<a href="https://flowmainds-ai.booth.pm/items/8088064">FlowMinds://AI</a> 3D + LLM + ボイス
+</li>
+
+<li>
+<a href="https://pxr.booth.pm/items/8090485">sentinel</a> 2D/3D + LLM + ボイス
+</li>
+
+<li>
+<a href="https://store.steampowered.com/app/4314080/AI/">AI'る。～ミライア・リンクス～</a> 3D + ローカルLLM + ボイス
+</li>
+
+<li>
+<a href="https://github.com/makumoru/AI_DesktopMascot_cocococo">ここここ</a> 2D + LLM + ボイス
+</li>
+
+<li>
+<a href="https://tojikuro.booth.pm/items/7144906">HikariAssistant</a> 2D + LLM
+</li>
+
+<li>
+<a href="https://booth.pm/ja/items/6821221">CocoroAI</a> 3D(VRM) + LLM + ボイス
+</li>
+
+<li>
+<a href="https://github.com/MidraLab/uDesktopMascot">uDesktopMascot</a> 3D(VRM) + LLM + ボイス
+</li>
+
+<li>
+<a href="https://namarikarte.com/vcot/manual/">Vcot</a> 2D &amp; 3D + LLM + ボイス
+</li>
+
+<li>
+<a href="https://www.chocoz.ai/">ちょこざい</a> 2D + LLM + ボイス? / クローズドβ終了
+</li>
+
+</ul>
+
+<hr />
+
+<ul>
+
+<li>
+<a href="https://kazuyabros.booth.pm/items/8102679">SpriTalk</a> 2D 配信向け
+</li>
+
+<li>
+<a href="https://yuki-p.booth.pm/items/7913743">Diff Motion</a> 2D 配信向け
+</li>
+
+<li>
+<a href="https://store.steampowered.com/app/3548580/Chill_with_You__LoFi_Story/">Chill with You : Lo-Fi Story</a> 3D 作業支援
+</li>
+
+<li>
+<a href="https://store.steampowered.com/app/3625270/MateEngine/">MateEngine</a> 3D(VRM)
+</li>
+
+<li>
+<a href="https://malaybaku.github.io/VMagicMirror/">VMagicMirror</a> 3D(VRM)制御ツール 配信向け
+</li>
+
+<li>
+<a href="https://store.steampowered.com/app/3301060/Desktop_Mate/">Desktop Mate</a> 3D
+</li>
+
+<li>
+<a href="https://github.com/leobtype/Puppet3">Puppet</a> 2D 配信向け
+</li>
+
+<li>
+<a href="https://github.com/LipliStyle?tab=repositories">Liplisシリーズ</a> 2D
+</li>
+
+<li>
+<a href="https://docs.nizima.com/apps/nizimas/">にじマス</a> Live2D
+</li>
+
+</ul>
+
+<hr />
+
+<ul>
+
+<li>
+<a href="https://www.gatebox.ai/">Gatebox / デジタルフィギュアボックス</a> 物理
+</li>
+
+<li>
+<a href="https://note.com/lirueslab/n/n9636dbbae2a8">伺かのキャラクター表現について</a>と<a href="https://note.com/lirueslab/n/n4d0ad4daec67">ゴーストに似たものまとめ</a>
+</li>
+
+</ul>
+
+<h2 id="vtuber">ぶいなものたち</h2>
+
+<ul>
+
+<li>
+<a href="https://www.youtube.com/@clearusui">宇推くりあ</a> ロケット工学アイドルVtuber &#x1f680;&#x1f525; <span style="font-size: small; color: gray;">ぽなの私物化枠1</span>
+</li>
+
+<li>
+<a href="https://www.youtube.com/@usagisora">宇佐木そら</a> うさうさお歌アイドル &#x1f430;&#x1f955;&#x1f496; <span style="font-size: small; color: gray;">ぽなの私物化枠2</span>
+</li>
+
+<li>
+<a href="https://www.youtube.com/@clearsky0914">Clear&empty;Sky</a> 上2人のアイドルユニット &#x2600;&#xfe0f;&#x1f31f; <span style="font-size: small; color: gray;">ぽなの私物化枠1.5</span>
+</li>
+
+</ul>
+
+<ul>
+
+<li>
+<a href="https://www.youtube.com/@user-qb8mi3ut6s">ぬかさんま</a> さんまのぬか漬け
+</li>
+
+<li>
+<a href="https://www.youtube.com/@momoirocandy">くろぴかちゃん</a> くろくてはねのあるほう
+</li>
+
+<li>
+<a href="https://www.youtube.com/@POPUNA">ぽぷな!(x4)</a> なんかやべえやつ
+</li>
+
+<li>
+<a href="https://www.youtube.com/@user-ys5zi3fu9j">月都かなこ</a> 仮想的音楽女子高生 <a href="https://x.com/KanakoTsukimiya">今はこのへんにいます</a>
+</li>
+
+<li>
+<a href="https://www.youtube.com/channel/UCcwMJL9kTJ_VK5r6vMC8xXA">半透明なまこ</a> Live2D自作勢
+</li>
+
+<li>
+<a href="https://www.youtube.com/channel/UC2inGqlTeuG_5m6CoRZ3tOQ">真鴨子規</a> 趣味で気ままに物書き
+</li>
+
+</ul>
+
+</td>
+
+<td class="maincontent-spacer" style="width: 1%;">　</td>
+
+<td class="maincontent-content" style="width: 49.5%;">
+
+<h2 id="developer_first">はじめに</h2>
+
+<p>←左欄やここに何か載せたい方、その他ご要望は、下記までご連絡ください。</p>
+
+<ul>
+<li>管理者連絡先
+
+<ul>
+<li><a href="https://x.com/ponapalt">twitter:ponapalt</a></li>
+<li><a rel="me" href="https://ukadon.shillest.net/@ponapalt">ukadon:ponapalt</a></li>
+<li>e-mail: ponapalt at shillest.net</li>
+</ul>
+
+</li>
+</ul>
+
+<!--<h2>期間限定/お知らせ</h2>-->
+
+<!--<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://nikolat.herokuapp.com/ukagaka/sosiremi-closing/">SoSiReMi閉鎖のお知らせ</a><br />移転をお願いします。移転後は右側の報告フォームへ。
+</p>-->
+
+<h2 id="developer_social">ソーシャル</h2>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://nikolat.github.io/sosiremi/">偽SoSiReMi</a><br />GitHubで配布されている伺か関連ファイルまとめ
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://nikolat.github.io/sirefaso/">偽SiReFaSo</a><br />GitHubで開発されている伺か関連プロジェクト更新検知 <a href="https://ponapalt.hatenablog.com/entry/2023/01/04/081731">設定方法</a>
+</p>
+
+<ul>
+<li>GitHub
+
+<ul>
+
+<li><a href="https://github.com/ukatech">github::Ukatech</a> (里々＋他プラグイン/SAORI等開発)
+
+<ul>
+<li><a href="https://github.com/ukatech/satoriya-shiori/wiki">github::satoriya-shiori</a> (里々開発)</li>
+<li><a href="https://github.com/ukatech/csaori/wiki">github::csaori</a> (SAORIライブラリ開発)</li>
+<li><a href="https://github.com/ukatech/ukadoc">github::ukadoc</a> (仕様書)</li>
+</ul>
+
+</li>
+
+<li><a href="https://github.com/YAYA-shiori">github::YAYA-shiori</a> (文開発)</li>
+
+<li><a href="https://github.com/ponapalt">github::ponapalt</a> (個人的メンテ等)</li>
+
+</ul>
+</li>
+</ul>
+
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://writening.net/page?3LPw8t">ゴーストが作りたい</a><br />Discord for 開発寄り伺か
+</p>
+
+<h2 id="developer_link">外部リンク</h2>
+
+<p>ゴースト開発の質問・交流については、うかどんやDiscordでもよく行われています。そちらもご覧ください。</p>
+
+<p><a href="https://coyokoya.net/ghost.html"><img src="image/banner/coyokoya.gif" width="200" height="40" alt="コヨーテ小屋" style="float: left; margin: 0px 4px;" />コヨーテ小屋→ゴーストを作ろう！</a><br />初心者向けのやさしい開発ヒント
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://kogami.sakura.ne.jp/ghost/hajiuka/">基本的に物置き→はじめてのゴーストの作り方</a><br />実際に動くゴーストの製作体験ページ
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://nanachi.sakura.ne.jp/">ななろだ・さとりすと</a><br />ゴーストアップローダ・里々向け統合開発環境
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://ghost-info.net/fluxbb/">伺的なフォーラム</a><br />相談質問用フォーラム
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://sousakuhow.com/">ねりろぐ</a><br />創作活動応援サイト：「伺か(SSP)」カテゴリ必見
+</p>
+
+<p>
+<a href="https://wikiwiki.jp/feeshell/"><img src="image/banner/freeshell.png" width="200" height="40" alt="freeshell Wiki" style="float: left; margin: 0px 4px;" />
+freeshell Wiki</a><br />伺かゴースト新規開発向け立ち絵(シェル)紹介
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://khmix.sakura.ne.jp/download.shtml">キャラクターなんとか機</a><br />自由に立ち絵のパーツを組み合わせてシェルを創るソフト <a href="https://wikiwiki.jp/feeshell/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%81%AA%E3%82%93%E3%81%A8%E3%81%8B%E6%A9%9F">拡張データ</a>
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://crow.aqrs.jp/reference/all/">CROW・SSPリファレンス</a><br />開発者による仕様メモ [旧] =&gt; <a href="/ukadoc/manual/">ukadocへ</a>
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://www.ooyashima.net/db/">大八洲.NET データベース</a><br />一部の仕様の詳細なまとめ [旧] =&gt; <a href="/ukadoc/manual/">ukadocへ</a>
+</p>
+
+<h2 id="developer_direct">直営</h2>
+
+<p>
+<a href="/ukadoc/manual/"><img src="image/banner/ukadoc.png" width="200" height="40" alt="ukadoc project" style="float: left; margin: 0px 4px;" />
+ukadoc project</a><br />仕様書書きプロジェクト
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://forms.gle/sy5TkJYpotc9TxCF7">大規模移転対策URL置換データ報告フォーム</a><br />ゴーストの公開サイト移転の報告にご協力を
+</p>
+
+<p>
+<a href="http://emily.shillest.net/ayaya/"><img src="image/banner/ayaya.png" width="200" height="40" alt="文屋" style="float: left; margin: 0px 4px;" />
+文屋(AYAYA)</a><br />SHIORI"文"の仕様とTips
+</p>
+
+<p>
+<a href="http://ukadev.shillest.net/"><img src="image/banner/ukadev.png" width="200" height="40" alt="伺か開発情報検索" style="float: left; margin: 0px 4px;" />
+伺か開発情報検索</a><br />開発情報に特化したカスタム検索
+</p>
+
+<p>
+<a href="http://emily.shillest.net/specwiki/"><img src="image/banner/specwiki.png" width="200" height="40" alt="駄でべWiki" style="float: left; margin: 0px 4px;" />
+駄でべWiki</a><br />開発メモ集積所
+</p>
+
+<p>
+<a href="http://ms.shillest.net/"><img src="image/banner/ms.png" width="200" height="40" alt="整備班" style="float: left; margin: 0px 4px;" />
+整備班</a><br />ゴースト開発・メンテプロジェクト
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="http://navy.shillest.net/">鎮守府の不可思議な日常</a><br />艦これゴースト用開発サイト
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://status.de10.moe/">SSP BUGTRAQ サービス運用状況</a>
+</p>
+
+<p>
+<img src="image/window.gif" width="16" height="16" alt="[別サイト等]" style="margin: 0px 2px;" />
+<a href="https://meatlog.de10.moe/">ぽなのおにくせいかつ：雑メモ</a>
+</p>
+
+<h2 id="bonus">おまけ</h2>
+
+<p>四月馬鹿 <a href="2003apr/">2003</a> <a href="2004apr/">2004</a> <a href="2005apr/">2005</a> <a href="simapan/">2006</a> <a href="2007apr/">2007</a> <a href="2008apr/">2008</a> (2009=改装) <a href="apr/2010/">2010</a> <a href="2011apr.html">2011</a> <a href="railway.html">2012</a> <a href="apr/2013/">2013</a> <a href="2026apr.html">2026</a></p>
+
+<p>
+SSP BUGTRAQへようこそ！<br />
+あなたは <span id="counter"></span> 番目の訪問者です。<br />
+キリ番は好きなだけ踏み逃げしてください。
+</p>
+
+</td>
+
+</tr>
+</tbody>
+</table>
+
 </div>
 
-<div id="main">
+<!-- *****FOOTER***** -->
 
-<div class="section" id="download">
-  <h2>📥 下载 SSP 汉化版 / Download SSP Sinicized</h2>
-  <div class="download-box">
-    <a href="https://github.com/RealCrystalNight/ssp-tooling/releases/latest/download/ssp_2_8_31f.exe" class="download-btn">下载 SSP 2.8.31 汉化版</a>
-    <p class="note">包含 SSP 本体 + 简体中文语言包 / Includes SSP + Simplified Chinese Language Pack</p>
-    <p class="note">SHA-256: <code>请查看 Release 页面 / See Release page</code></p>
-  </div>
-  <h3>其他语言包 / Language Packs</h3>
-  <ul>
-    <li><a href="https://github.com/ukatech/ssp-sinicization/tree/master/chinese-simplified">简体中文 (Simplified Chinese)</a></li>
-    <li><a href="https://github.com/ukatech/ssp-sinicization/tree/master/chinese-traditional">繁體中文 (Traditional Chinese)</a></li>
-    <li><a href="https://github.com/ukatech/ssp-sinicization/tree/master/for_watch/engilsh">English</a></li>
-  </ul>
-</div>
+<table summary="header" class="header-footer">
+<tbody>
+<tr>
+<td class="footer">SSP BUGTRAQ / <a href="http://www.famfamfam.com/lab/icons/silk/" title="アイコン">famfamfam SILK ICONS</a> / <a href="http://www.w-frontier.com/"  title="高機能HTML/XHTML/スタイルシート対応エディタ(Web Frontier)">Created by ez-HTML</a></td>
+</tr>
+</tbody>
+</table>
 
-<div class="section" id="about">
-  <h2>📖 关于 SSP Tooling</h2>
-  <p>SSP (Sakura Script Player) 是一款功能强大的伺か兼容桌面角色软件。本工具包提供：</p>
-  <ul>
-    <li>SSP 本体一键安装（自动下载 Java 运行环境）</li>
-    <li>简体中文语言包集成</li>
-    <li>繁体中文语言包集成</li>
-    <li>自动更新与配置工具</li>
-  </ul>
-  <p>本项目基于 <a href="https://github.com/ukatech/ssp-sinicization">ukatech/ssp-sinicization</a> 的汉化资源构建。</p>
-  <h3>什么是伺か (Ukagaka)?</h3>
-  <p>伺かは、デスクトップ上で動作するキャラクター表示エンジンです。ゴーストと呼ばれるキャラクターが話しかけたり、デスクトップを彩ります。</p>
-  <p>Ukagaka is a desktop character engine. "Ghosts" (characters) live on your desktop, talk to you, and provide various functions.</p>
-</div>
 
-<div class="section" id="usage">
-  <h2>🔧 使用方法 / Usage</h2>
-  <ol>
-    <li>下载 <strong>ssp_2_8_31f.exe</strong></li>
-    <li>双击运行（会自动下载 Java 17 运行环境，仅首次需要）</li>
-    <li>安装程序会自动部署 SSP 和语言包</li>
-    <li>启动 SSP，享受中文界面！</li>
-  </ol>
-  <h3>系统要求 / Requirements</h3>
-  <ul>
-    <li>Windows 2000 及以上 / Windows 2000 or later</li>
-    <li>或 Wine 兼容环境 / Wine-compatible environment</li>
-    <li>128MB 以上可用内存 / 128MB+ RAM</li>
-    <li>首次运行需要网络以下载 Java 17 / Internet required for first Java 17 download (~175MB)</li>
-  </ul>
-</div>
-
-<div class="section" id="changelog">
-  <h2>📋 更新日志 / Changelog</h2>
-  <h3>v2.8.31 (2026-06-16)</h3>
-  <ul>
-    <li>基于 SSP 2.8.31 官方版本</li>
-    <li>集成简体/繁体中文语言包</li>
-    <li>新增一键安装程序（自动部署 Java）</li>
-    <li>基于 ukatech/ssp-sinicization 的汉化资源</li>
-  </ul>
-  <h3>第三方资源 / Third-party Resources</h3>
-  <ul>
-    <li><a href="https://github.com/ukatech/ssp-sinicization">ssp-sinicization</a> — 中文语言包 / Chinese Language Packs</li>
-    <li><a href="https://github.com/nikolat/sosiremi">sosiremi</a> — NAR 文件列表 / NAR File Listing</li>
-    <li><a href="https://ssp.shillest.net/">SSP BUGTRAQ</a> — 官方站点 / Official Site</li>
-  </ul>
-</div>
-
-<div class="section" id="links">
-  <h2>🔗 相关链接 / Related Links</h2>
-  <ul>
-    <li><a href="https://ssp.shillest.net/">SSP 官方网站 / Official Site</a></li>
-    <li><a href="https://github.com/ukatech/ssp-sinicization">ssp-sinicization (汉化资源)</a></li>
-    <li><a href="https://github.com/ponapalt/ssp">SSP 源代码 / Source Code</a></li>
-    <li><a href="https://ukagaka.github.io/">伺か公式 / Ukagaka Official</a></li>
-    <li><a href="https://github.com/nikolat/sosiremi">偽SoSiReMi — GitHub NAR 列表</a></li>
-  </ul>
-</div>
-
-</div>
-
-<div id="footer">
-  <p>SSP Tooling — 伺か简体中文化项目</p>
-  <p>基于 <a href="https://ssp.shillest.net/">SSP BUGTRAQ</a> 和 <a href="https://github.com/ukatech/ssp-sinicization">ssp-sinicization</a></p>
-  <p>本站不是 SSP 官方网站 / This site is not the official SSP website</p>
-</div>
 
 </body>
 </html>

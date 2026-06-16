@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か,SSP">
+<meta name="description" content="「伺か」関連コンテンツ作者向けリファレンス。SSP公式文書。">
+<title>UKADOC Project</title>
+<link rel="stylesheet" href="base.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<section class="baseframe">
+	<header>
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
+			UKADOC Project(Powered by Disc-2)
+		</iframe>
+	</header>
+	<script type="text/javascript">
+		//获取当前页面的URL的参数，保存在一个对象中
+		function getURLParams(){
+			var url = location.search;
+			var params = {};
+			if(url.indexOf("?") != -1){
+				var str = url.substr(1);
+				var strs = str.split("&");
+				for(var i = 0; i < strs.length; i ++){
+					params[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+				}
+			}
+			return params;
+		}
+		//获取当前页面的URL的参数
+		var params = getURLParams();
+		//若URL中有参数：event_name
+		if(params["event_name"]){
+			var event_name = params["event_name"];
+			var url = ".";
+			if(event_name.indexOf("On_") == 0)
+				event_name = event_name.substr(3);
+			{
+				var re_charname_start = new RegExp(/^char\d+\./);
+				if(event_name.match(re_charname_start))
+					event_name = event_name.replace(re_charname_start, "char*.");
+			}
+			{
+				var re_boxname_start = new RegExp("^(communicatebox|scriptbox|addressbar|teachbox|dateinput|timeinput|ipinput|sliderinput|passwordinput|inputbox).");
+				if(event_name.match(re_boxname_start))
+					event_name = event_name.replace(re_boxname_start, "boxname.");
+			}
+			switch(event_name){
+case "OnBeerShower":
+case "OnDive":
+case "OnHitThunder":
+case "OnStampInfo":
+case "OnStampAdd":
+case "OnStampInfoCall":
+case "OnPotatoReturn":
+case "OnPotatoFileNotFound":
+case "OnPotatoError":
+case "OnCrystalDiskInfoEvent":
+case "OnCrystalDiskInfoClear":
+case "OnHttpcNotify":
+case "OnApplicationBoot":
+case "OnApplicationClose":
+case "OnApplicationExist":
+case "OnApplicationVersion":
+case "OnApplicationOperationFinish":
+case "OnApplicationFileOpen":
+case "OnWebsiteUpdateNotify":
+case "OnKinokoObjectCreate":
+case "OnKinokoObjectDestroy":
+case "OnKinokoObjectChanging":
+case "OnKinokoObjectChanged":
+case "OnKinokoObjectInstalled":
+case "OnBatteryLow-kinoko":
+case "OnBatteryCritical-kinoko":
+case "OnSysResourceLow":
+case "OnSysResourceCritical":
+case "OnNekodorifObjectEmerge":
+case "OnNekodorifObjectHit":
+case "OnNekodorifObjectDrop":
+case "OnNekodorifObjectVanish":
+case "OnNekodorifObjectDodge":
+case "OnMusicPlay":
+case "OnFleetClockComplete":
+case "OnElonaOmakeMMAEventNewGame":
+case "OnElonaOmakeMMAEventGameLoad":
+case "OnElonaOmakeMMAEventGameQuit":
+case "OnElonaOmakeMMAEventHourPlayed":
+case "OnElonaOmakeMMAEventMapChanged":
+case "OnElonaOmakeMMAEventLevelUp":
+case "OnElonaOmakeMMAEventSkillUp":
+case "OnElonaOmakeMMAEventSkillDown":
+case "OnElonaOmakeMMAEventBelieveGod":
+case "OnElonaOmakeMMAEventJoinParty":
+case "OnElonaOmakeMMAEventSleep":
+case "OnElonaOmakeMMAEventAwake":
+case "OnElonaOmakeMMAEventInvestNPC":
+case "OnElonaOmakeMMAEventRandomEvent":
+case "OnElonaOmakeMMAEventAddNewsTopic":
+case "OnElonaOmakeMMAEventWish":
+case "OnElonaOmakeMMAEventWished":
+case "OnElonaOmakeMMAEventDead":
+case "OnElonaOmakeMMAEventPetDead":
+case "OnElonaOmakeMMAEventLastword":
+case "OnElonaOmakeMMAEventTravelGuide":
+case "OnElonaOmakeMMAEventAbandonPet":
+case "OnElonaOmakeMMAEventSaleSlave":
+case "OnElonaOmakeMMAEventSaleWife":
+case "OnElonaOmakeMMAEventMarriage":
+case "OnElonaOmakeMMAEventRefuseMarriage":
+case "OnElonaOmakeMMAEventJoinGuild":
+case "OnElonaOmakeMMAEventMutation":
+case "OnElonaOmakeMMAEventMutationCured":
+case "OnElonaOmakeMMAEventEtherDisease":
+case "OnElonaOmakeMMAEventEtherDiseaseCured":
+case "OnElonaOmakeMMAEventAdventGod":
+case "OnElonaOmakeMMAEventMewmewmew":
+case "OnElonaOmakeMMAEventBuyNuke":
+case "OnElonaOmakeMMAEventSetNuke":
+case "OnElonaOmakeMMAEventNukeExploded":
+case "OnElonaOmakeMMAEventLomiasInTheParty":
+case "OnElonaOmakeMMAEventLomiasKilled":
+case "OnElonaOmakeMMAEventZeomeKilled":
+case "OnElonaOmakeMMAEventConqueredLesimas":
+case "OnElonaOmakeMMAEventAtonement":
+case "OnElonaOmakeMMAEventBecomeCriminal":
+case "OnElonaOmakeMMAEventPerformance":
+case "OnElonaOmakeMMAEventClothOut":
+case "OnElonaOmakeMMAEventStealItem":
+case "OnElonaOmakeMMAEventTreasureDigging":
+case "OnElonaOmakeMMAEventReadTreasureMap":
+case "OnElonaOmakeMMAEventSkillLearned":
+case "OnElonaOmakeMMAEventWeatherChanged":
+case "OnElonaOmakeMMAEventRagnarok":
+case "OnElonaOmakeMMAEventSisterRagnarok":
+case "OnElonaOmakeMMAEventPray":
+case "OnElonaOmakeMMAEventOffer":
+case "OnElonaOmakeMMAEventPrayFailed":
+case "OnElonaOmakeMMAEventPrayEyth":
+case "OnElonaOmakeMMAEventAreaChanged*":
+case "OnElonaOmakeMMAEventPayTax":
+case "OnElonaOmakeMMAEventCooking":
+case "OnElonaOmakeMMAEventAreaChanged":
+case "OnElonaOmakeMMAEventHour":
+case "OnElonaOmakeMMAEventGrandmapocalypse":
+case "OnMahjong":
+case "OnMahjongResponse":
+case "OnSatolistBoot":
+case "OnSatolistGhostOpened":
+case "OnSatolistSaved":
+case "OnSatolistClosed":
+case "OnSatolistEventAdded":
+case "OnSatolistDictionaryFolderChanged":
+case "OnTourabuConquestStart":
+case "OnTourabuConquestEnd":
+case "OnTourabuDutyStart":
+case "OnTourabuDutyEnd":
+case "OnRequestValues":
+case "OnGetValues":
+case "OnTalkRequest":
+case "OnHandActivate":
+case "OnJitenBattle":
+case "OnJitenTagBattle":
+case "OnMglBattle":
+case "Send60stair_Call":
+case "Send60stair_Start":
+case "Send60stair_YourTurnStart":
+case "Send60stair_Marking":
+case "Send60stair_DiceRoll":
+case "Send60stair_Dobon":
+case "Send60stair_YourTurnEnd":
+case "Send60stair_Goal":
+case "Send60stair_GameEnd":
+case "Send60stair_GetStatus":
+case "OnKanadeTeaPartyInfomationRequest":
+case "OnKanadeTeaParty":
+case "OnKanadeTeaPartyEnd":
+case "OnPoker":
+case "OnPokerNotify":
+case "OnMopClear":
+case "ShioriEcho.Begin":
+case "ShioriEcho.End":
+case "ShioriEcho.GetName":
+case "ShioriEcho":
+case "ShioriEcho.GetResult":
+case "ShioriEcho.TabPress":
+case "ShioriEcho.CommandUpdate":
+case "ShioriEcho.CommandPrompt":
+case "ShioriEcho.CommandComplete":
+case "ShioriEcho.CommandHistory.New":
+case "ShioriEcho.CommandHistory.Update":
+case "ShioriEcho.CommandHistory.Get":
+case "ShioriEcho.CommandHistory.ForwardIndex":
+case "OnWeatherStation.Weather":
+case "OnWeatherStation.Astro":
+case "OnWeatherStation.Alerts":
+case "OnWeatherStation.Forecast.Day":
+case "OnWeatherStation.Forecast.Hourly":
+case "OnWeatherStation.Error":
+case "OnNeedlePoke":
+case "OnHydrateStatsNotify":
+case "OnUkadocScriptExample":
+case "OnMusicPlayer.SongInfo":
+					url = "./list_shiori_event_ex.html#" + event_name;
+					break;
+case "boxname.defaultleft":
+case "boxname.defaulttop":
+					event_name = "boxname.defaultleft";
+case "caption_shioriresource":
+case "version":
+case "craftman":
+case "craftmanw":
+case "name":
+case "log_path":
+case "homeurl":
+case "useorigin1":
+case "username":
+case "sakura.defaultx":
+case "kero.defaultx":
+case "char*.defaultx":
+case "sakura.defaulty":
+case "kero.defaulty":
+case "char*.defaulty":
+case "sakura.defaultleft":
+case "kero.defaultleft":
+case "char*.defaultleft":
+case "sakura.defaulttop":
+case "kero.defaulttop":
+case "char*.defaulttop":
+case "sakura.recommendsites":
+case "sakura.portalsites":
+case "kero.recommendsites":
+case "char*.recommendsites":
+case "sakura.recommendbuttoncaption":
+case "sakura.portalbuttoncaption":
+case "kero.recommendbuttoncaption":
+case "char*.recommendbuttoncaption":
+case "updatebuttoncaption":
+case "vanishbuttoncaption":
+case "readmebuttoncaption":
+case "vanishbuttonvisible":
+case "sakura.popupmenu.visible":
+case "kero.popupmenu.visible":
+case "char*.popupmenu.visible":
+case "sakura.popupmenu.type":
+case "kero.popupmenu.type":
+case "char*.popupmenu.type":
+case "getaistate":
+case "getaistateex":
+case "legacyinterface":
+case "other_homeurl_override":
+case "menu.sidebar.bitmap.filename":
+case "menu.background.bitmap.filename":
+case "menu.foreground.bitmap.filename":
+case "menu.background.font.color.r":
+case "menu.background.font.color.g":
+case "menu.background.font.color.b":
+case "menu.foreground.font.color.r":
+case "menu.foreground.font.color.g":
+case "menu.foreground.font.color.b":
+case "menu.separator.color.r":
+case "menu.separator.color.g":
+case "menu.separator.color.b":
+case "menu.frame.color.r":
+case "menu.frame.color.g":
+case "menu.frame.color.b":
+case "menu.disable.font.color.r":
+case "menu.disable.font.color.g":
+case "menu.disable.font.color.b":
+case "caption_visible":
+case "caption_menushortcut":
+case "-":
+case "activaterootbutton.caption":
+case "addressbarbutton.caption":
+case "alignrootbutton.caption":
+case "alwaysstayontopbutton.caption":
+case "alwaystrayiconvisiblebutton.caption":
+case "balloonhistorybutton.caption":
+case "balloonrootbutton.caption":
+case "biffallbutton.caption":
+case "biffbutton.caption":
+case "calendarbutton.caption":
+case "callghosthistorybutton.caption":
+case "callghostrootbutton.caption":
+case "callsstpsendboxbutton.caption":
+case "char*.recommendsites.caption":
+case "charsetbutton.caption":
+case "closeballoonbutton.caption":
+case "closebutton.caption":
+case "collisionvisiblebutton.caption":
+case "configurationbutton.caption":
+case "configurationrootbutton.caption":
+case "debugballoonbutton.caption":
+case "definedsurfaceonlybutton.caption":
+case "dressuprootbutton.caption":
+case "duibutton.caption":
+case "enableballoonmovebutton.caption":
+case "firststaffbutton.caption":
+case "ghostexplorerbutton.caption":
+case "ghosthistorybutton.caption":
+case "ghostinstallbutton.caption":
+case "ghostrootbutton.caption":
+case "headlinesensehistorybutton.caption":
+case "headlinesenserootbutton.caption":
+case "helpbutton.caption":
+case "hidebutton.caption":
+case "historyrootbutton.caption":
+case "inforootbutton.caption":
+case "leavepassivebutton.caption":
+case "messengerbutton.caption":
+case "pluginhistorybutton.caption":
+case "pluginrootbutton.caption":
+case "portalrootbutton.caption":
+case "purgeghostcachebutton.caption":
+case "quitbutton.caption":
+case "rateofuseballoonbutton.caption":
+case "rateofusebutton.caption":
+case "rateofuserootbutton.caption":
+case "rateofusetotalbutton.caption":
+case "readmebutton.caption":
+case "recommendrootbutton.caption":
+case "regionenabledbutton.caption":
+case "reloadinfobutton.caption":
+case "resetballoonpositionbutton.caption":
+case "resettodefaultbutton.caption":
+case "scriptlogbutton.caption":
+case "shellrootbutton.caption":
+case "shellscaleotherbutton.caption":
+case "shellscalerootbutton.caption":
+case "sntpbutton.caption":
+case "switchactivatewhentalkbutton.caption":
+case "switchactivatewhentalkexceptupdatebutton.caption":
+case "switchautobiffbutton.caption":
+case "switchautoheadlinesensebutton.caption":
+case "switchblacklistingbutton.caption":
+case "switchcompatiblemodebutton.caption":
+case "switchconsolealwaysvisiblebutton.caption":
+case "switchconsolevisiblebutton.caption":
+case "switchdeactivatebutton.caption":
+case "switchdontactivatebutton.caption":
+case "switchdontforcealignbutton.caption":
+case "switchduivisiblebutton.caption":
+case "switchforcealignfreebutton.caption":
+case "switchforcealignlimitbutton.caption":
+case "switchignoreserikomovebutton.caption":
+case "switchlocalsstpbutton.caption":
+case "switchmovetodefaultpositionbutton.caption":
+case "switchproxybutton.caption":
+case "switchquietbutton.caption":
+case "switchreloadbutton.caption":
+case "switchreloadtempghostbutton.caption":
+case "switchremotesstpbutton.caption":
+case "switchrootbutton.caption":
+case "switchtalkghostbutton.caption":
+case "systeminfobutton.caption":
+case "updatebutton.caption":
+case "updatefmobutton.caption":
+case "updateplatformbutton.caption":
+case "utilityrootbutton.caption":
+case "vanishbutton.caption":
+case "aistatebutton.caption":
+case "dictationbutton.caption":
+case "texttospeechbutton.caption":
+case "tooltip":
+case "balloon_tooltip":
+					url = "./list_shiori_resource.html#" + event_name;
+					break;
+				default:
+					url = "./list_shiori_event.html#" + event_name;
+					break;
+			}
+			//进行跳转！
+			window.location.href=url;
+		}
+	</script>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<main class="toppage">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>UKADOC トップページ</h1>
+<section>
+	<section>
+		<h1>ukadocについて</h1>
+		<div class="passage">
+			<p>伺か関連の仕様文書集約プロジェクトである<a href="https://github.com/ponapalt/ukadoc/wiki">UKADOC project</a>の編集するドキュメント集です。</p>
+			<p><em><a href="http://ssp.shillest.net/" target="_blank">SSP</a>についてはここのドキュメントが公式文書</em>として扱われます。</p>
+		</div>
+		<div class="passage">
+			<p>誤りの指摘や、質問、意見、要望、情報提供などは<a href="http://ssp.shillest.net/bts/?project=misc&action=top">ばぐとら研究所ToDo</a>までお願いします。</p>
+			<p>ゴースト制作のためのサイト内の文章の引用・転載はご自由に。</p>
+		</div>
+	</section>
+	<section>
+		<h1>対象version</h1>
+		<ul>
+			<li><a href="http://ssp.shillest.net/" target="_blank">SSP</a> 最新版(公式仕様書)</li>
+			<li><a href="http://usada.sakura.vg/" target="_blank">MATERIA</a> period 583</li>
+			<li><a href="http://crow.aqrs.jp/" target="_blank">CROW</a> ver0.5.2(開発版)</li>
+			<li><a href="http://github.com/Tatakinov/ninix-kagari" target="_blank">ninix-kagari</a> 最近版</li>
+		</ul>
+	</section>
+	<section>
+		<h1>外部リンク</h1>
+		<ul>
+			<li><a href="http://ukadev.shillest.net/" target="_blank">伺か開発情報検索</a></li>
+			<li><a href="http://usada.sakura.vg/contents/specification.html" target="_blank">伺か公式仕様書</a></li>
+			<li><a href="http://crow.aqrs.jp/reference/all/" target="_blank">CROW・SSP仕様書</a></li>
+			<li><a href="http://www.ooyashima.net/db/" target="_blank">大八州.NET　非公式仕様書</a></li>
+			<li><a href="http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2" target="_blank">駄でべwiki　仕様メモ</a></li>
+		</ul>
+	</section>
+	<section>
+		<h1>ukadocの見方</h1>
+		<div class="passage">
+			<p>サイドバーにある記事はカテゴリーごとにそれぞれ以下のような内容を扱っています。</p>
+			<dl>
+				<dt>ファイル構成</dt>
+				<dd>
+					<p>各伺か関連コンテンツを構成するファイルの解説や、ディレクトリ構造について扱っています。</p>
+					<p>どのようなファイルが必要であるか・利用できるかの全体像を把握したい場合などに参照できるでしょう。</p>
+				</dd>
+				<dt>設定ファイル</dt>
+				<dd>
+					<p>各伺か関連コンテンツに用いられる個々の設定ファイルの、記述内容についての解説です。</p>
+					<p>それぞれの設定ファイルの記述時に参照できるでしょう。できる限り凡例も用意しています。</p>
+				</dd>
+				<dt>さくらスクリプト</dt>
+				<dd>
+					<p>ゴーストの動作指示である「さくらスクリプト」の各命令についての解説です。</p>
+					<p>どのような命令が可能であるか把握し、利用する際に参照できるでしょう。</p>
+				</dd>
+				<dt>イベント</dt>
+				<dd>
+					<p>ベースウェアがSHIORIやPLUGINなどに対して通知するイベントのIDそれぞれの解説です。</p>
+					<p>ゴーストやPLUGIN、SHIORIなどの製作にあたって、個々のイベントやそのReferenceについて知りたい場合に参照できるでしょう。</p>
+				</dd>
+				<dt>規格</dt>
+				<dd>
+					<p>各伺か関連コンテンツにまつわる諸々の規格のまとめです。</p>
+					<p>どちらかといえばSHIORIやSAORI、ベースウェアなどの、システムの基幹的部分に関係する情報です。</p>
+				</dd>
+				<dt>HowTo</dt>
+				<dd>
+					<p>各伺か関連コンテンツの作成にまつわる、基礎的な方法の紹介です。</p>
+					<p>ただし個別のケースに応じたTIPSまで網羅するのは現実的には難しいので、より具体的な情報をお求めの場合は、外部のサイトも探してみてください。</p>
+				</dd>
+				<dt>その他</dt>
+				<dd>
+					<p>その他、SSP等ベースウェアの仕様に関するメモや補足記事などです。</p>
+				</dd>
+			</dl>
+		</div>
+	</section>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</main>
+	</section>
+	<footer>
+		<p class="author">
+			管理者 : <a href="https://github.com/ponapalt/ukadoc/wiki" target="_blank">UKADOC Project</a>
+		</p>
+		<p class="banner">
+			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
+		</p>
+	</footer>
+</section>
+</body>
+</html>
+<!--nobanner-->

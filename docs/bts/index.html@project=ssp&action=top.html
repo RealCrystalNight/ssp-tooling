@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex,follow" />
+	<title>My View - Bug Tracking System for SSP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/default.css?cache_key=db5162b63bcfbe265c66c74b9be12f14">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/status_config.php?cache_key=75af6a86f3fcd0ee8dca45d7e1e57879">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/bootstrap-3.4.1.min.css">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/font-awesome-4.7.0.min.css">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/fonts.css?cache_key=db5162b63bcfbe265c66c74b9be12f14">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/ace.min.css?cache_key=db5162b63bcfbe265c66c74b9be12f14">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/ace-skins.min.css?cache_key=db5162b63bcfbe265c66c74b9be12f14">
+	<link rel="stylesheet" type="text/css" href="https://bts.shillest.net//css/ace-mantis.css?cache_key=db5162b63bcfbe265c66c74b9be12f14">
+<style>
+* { font-family: "Open Sans"; } 
+h1, h2, h3, h4, h5 { font-family: "Open Sans"; } 
+</style>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="BTS for SSP: full-text search" href="https://bts.shillest.net/browser_search_plugin.php?type=text">
+	<link rel="search" type="application/opensearchdescription+xml" title="BTS for SSP: search by Issue Id" href="https://bts.shillest.net/browser_search_plugin.php?type=id">
+	<script src="/javascript_config.php?cache_key=75af6a86f3fcd0ee8dca45d7e1e57879"></script>
+	<script src="/javascript_translations.php?cache_key=f46b8d0b437feced90a4f47d54b099fc"></script>
+	<script src="/js/jquery-3.7.1.min.js"></script>
+	<script src="/js/common.js"></script>
+	<meta http-equiv="Refresh" content="1800; URL=https://bts.shillest.net/my_view_page.php?refresh=true" />
+</head>
+<body class="skin-3">
+<div id="navbar" class="navbar navbar-default navbar-collapse navbar-fixed-top noprint"><div id="navbar-container" class="navbar-container"><button id="menu-toggler" type="button" class="navbar-toggle menu-toggler pull-left hidden-lg hidden-md" data-target="#sidebar"><span class="sr-only">Toggle sidebar</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-header"><a href="/my_view_page.php" class="navbar-brand"><span class="smaller-75"> Bug Tracking System for SSP </span></a><button type="button" class="navbar-toggle navbar-toggle collapsed pull-right hidden-sm hidden-md hidden-lg" data-toggle="collapse" data-target=".navbar-buttons,.navbar-menu"><span class="sr-only">Toggle user menu</span><i class="fa fa-user ace-icon fa-2x white" ></i> </button></div><div class="navbar-buttons navbar-header navbar-collapse collapse"><ul class="nav ace-nav"><li class="hidden-sm hidden-xs"><div class="btn-group btn-corner padding-right-8 padding-left-8"><a class="btn btn-primary btn-sm" href="bug_report_page.php"><i class="fa fa-edit " ></i> Report Issue</a></div></li><li class="grey"><a data-toggle="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-user ace-icon fa-2x white" ></i> <span class="user-info">guest</span><i class="fa fa-angle-down ace-icon bigger-110" ></i></a><ul class="user-menu dropdown-menu dropdown-menu-right dropdown-yellow dropdown-caret dropdown-close"><li><a href="https://bts.shillest.net/issues_rss.php?"><i class="fa fa-rss-square orange ace-icon" ></i> RSS</a></li><li class="divider"></li><li><a href="/logout_page.php"><i class="fa fa-sign-out ace-icon" ></i> Logout</a></li></ul></li></ul></div></div></div><div class="main-container" id="main-container">
+<div id="sidebar" class="sidebar sidebar-fixed responsive compact "><ul class="nav nav-list"><li class="active">
+<a href="/my_view_page.php">
+<i class="fa fa-dashboard menu-icon" ></i>
+<span class="menu-text"> My View </span>
+</a>
+<b class="arrow"></b>
+</li>
+<li>
+<a href="/view_all_bug_page.php">
+<i class="fa fa-list-alt menu-icon" ></i>
+<span class="menu-text"> View Issues </span>
+</a>
+<b class="arrow"></b>
+</li>
+<li>
+<a href="/bug_report_page.php">
+<i class="fa fa-edit menu-icon" ></i>
+<span class="menu-text"> Report Issue </span>
+</a>
+<b class="arrow"></b>
+</li>
+<li>
+<a href="/changelog_page.php">
+<i class="fa fa-retweet menu-icon" ></i>
+<span class="menu-text"> Change Log </span>
+</a>
+<b class="arrow"></b>
+</li>
+<li>
+<a href="/roadmap_page.php">
+<i class="fa fa-road menu-icon" ></i>
+<span class="menu-text"> Roadmap </span>
+</a>
+<b class="arrow"></b>
+</li>
+</ul><div id="sidebar-btn" class="sidebar-toggle sidebar-collapse"><i data-icon2="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left"
+		class="ace-icon fa fa-angle-double-left"></i></div></div><div class="main-content">
+<div id="breadcrumbs" class="breadcrumbs noprint">
+<ul class="breadcrumb">
+  <li><i class="fa fa-user home-icon active" ></i>  Anonymous
+  <div class="btn-group btn-corner">
+	<a href="/login_page.php?return=%2Fmy_view_page.php" class="btn btn-primary btn-xs">Login</a>
+  </div></li>
+</ul>
+<div id="nav-search" class="nav-search"><form class="form-search" method="post" action="/jump_to_bug.php"><span class="input-icon"><input type="text" name="bug_id" autocomplete="off" class="nav-search-input" placeholder="Issue #"><i class="fa fa-search ace-icon nav-search-icon" ></i></span></form></div>
+</div>
+<div class="page-content">
+<div class="row">
+<div class="col-xs-12 col-md-12">
+	<div id="before_reporting" class="widget-box widget-color-orange ">
+		<div class="widget-header widget-header-small">
+			<h4 class="widget-title lighter">
+				報告する前に
+			</h4>
+		</div>
+		<div class="widget-body">
+			<div class="widget-main no-padding">
+				<ul>
+					<li>左側の「登録」から新規課題を登録できます。<br />
+					Please report new issue from left button.</li>
+					<li>不具合報告前にOSを「再起動」してみてください。OSレベルでの問題が直る場合があります。<br />
+					特に最近のWindowsの場合 シャットダウン→電源ON と 再起動 で挙動が異なります。<br />
+					Please reboot OS before reporting problem. It resolves OS level issue.<br />
+					In particular, recent Windows behave differently between shutdown and restart.</li>
+					<li><a href="https://bts.shillest.net/issues_rss.php">RSS Feed</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-xs-12 col-md-7">
+
+<div id="assigned" class="widget-box widget-color-blue2 ">
+	<div class="widget-header widget-header-small">
+		<h4 class="widget-title lighter">
+			<i class="fa fa-list-alt ace-icon" ></i><a class="white" href="view_all_set.php?type=1&amp;temporary=y&amp;hide_status=80">Assigned to Me (Unresolved)</a><span class="badge">  1 - 25 / 25  </span>		</h4>
+		<div class="widget-toolbar">
+			<a data-action="collapse" href="#">
+				<i class="fa fa-chevron-up 1 ace-icon bigger-125" ></i>			</a>
+		</div>
+		<div class="widget-toolbar no-border hidden-xs">
+			<div class="widget-menu">
+				<a class="btn btn-primary btn-white btn-round btn-xs" href="view_all_set.php?type=1&amp;temporary=y&amp;hide_status=80">View Issues</a>			</div>
+		</div>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-main no-padding">
+			<div class="table-responsive">
+				<table class="table table-bordered table-condensed table-striped table-hover">
+<tbody>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=789">0000789</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=789">The dressup explorer can't be accessed if the \0 character doesn't have dressups</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-06-14 21:20</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=776">0000776</a><br /><i class="fa fa-square fa-status-box status-20-fg" title="feedback"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=776">起動時にゴーストを最背面で起動する。</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-08 08:54</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=630">0000630</a><br /><i class="fa fa-square fa-status-box status-20-fg" title="feedback"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=630">シェルの拡大縮小アルゴリズムについて</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2025-08-25 07:55</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=709">0000709</a><br /><i class="fa fa-square fa-status-box status-30-fg" title="acknowledged"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=709">ゴーストが自由にいじれるスケジュール領域</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2025-08-25 07:39</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=655">0000655</a><br /><i class="fa fa-square fa-status-box status-40-fg" title="confirmed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=655">Outlookのメールチェックが出来ない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2025-08-18 16:16</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=618">0000618</a><br /><i class="fa fa-square fa-status-box status-50-fg" title="assigned"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=618">sstp expansion</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2024-07-04 05:46</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=616">0000616</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=616">ゴーストやプラグインにおけるOnOtherGhostTalkイベントでNoContentなイベントも補足できるようにしてほしい</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-12-24 20:01</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=598">0000598</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=598">New z-order options</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-05-23 13:18</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=361">0000361</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=361">x-ukagaka-linkで起動するゴーストを指定したい</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-03-12 18:11</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=582">0000582</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=582">Whitelist mode for delete.txt</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-03-07 13:20</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=575">0000575</a><br /><i class="fa fa-square fa-status-box status-50-fg" title="assigned"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=575#attachments" title="View 4 attachment(s) for issue #575"> <i class="fa fa-paperclip fa-lg grey" title="4&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=575">Vertical Menu Spacing option makes text unreadable when set to higher numbers</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-03-01 20:04</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=418">0000418</a><br /><i class="fa fa-square fa-status-box status-50-fg" title="assigned"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=418">Some suggestions for icon animation</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-02-19 21:55</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=548">0000548</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=548#attachments" title="View 1 attachment(s) for issue #548"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=548">Extra character balloons can't be dismissed from  balloon test mode</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-10-05 16:53</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=526">0000526</a><br /><i class="fa fa-square fa-status-box status-50-fg" title="assigned"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=526">Add option to disable user skipping text</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-08-18 12:57</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=442">0000442</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=442">Optimisation of network updates and homeurl override installation</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-02-27 13:17</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=253">0000253</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=253">narpng</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-02-16 11:46</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=392">0000392</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=392">Expand Balloon Test Mode</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-12-19 15:12</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=355">0000355</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=355">Allow user to specify the distance at which ghosts should 'stick' to the taskbar/screen edge</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-11-13 18:08</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=301">0000301</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=301">Allow balloon and shell to have custom dlls to draw the interface</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-10-02 12:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=288">0000288</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=288">New event: rate of use graph within one week</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-09-24 13:52</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=247">0000247</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=247">Some suggestions for speech recognition</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-09-10 10:07</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=36">0000036</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=36">【要望】SSPエクスプローラの挙動</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2020-06-14 02:58</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=25">0000025</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=25">ゴースト毎にサブプロセス化</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-06-19 04:37</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=23">0000023</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=23">吹き出しとシェルを前面に表示</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-06-12 04:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=16">0000016</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=16">吹き出しの表示をSNS風にする機能</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-05-30 21:43</span>	</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="space-10"></div><div id="unassigned" class="widget-box widget-color-blue2 ">
+	<div class="widget-header widget-header-small">
+		<h4 class="widget-title lighter">
+			<i class="fa fa-list-alt ace-icon" ></i><a class="white" href="view_all_set.php?type=1&amp;temporary=y&amp;handler_id=%5Bnone%5D&amp;hide_status=90">Unassigned</a><span class="badge">  1 - 17 / 17  </span>		</h4>
+		<div class="widget-toolbar">
+			<a data-action="collapse" href="#">
+				<i class="fa fa-chevron-up 1 ace-icon bigger-125" ></i>			</a>
+		</div>
+		<div class="widget-toolbar no-border hidden-xs">
+			<div class="widget-menu">
+				<a class="btn btn-primary btn-white btn-round btn-xs" href="view_all_set.php?type=1&amp;temporary=y&amp;handler_id=%5Bnone%5D&amp;hide_status=90">View Issues</a>			</div>
+		</div>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-main no-padding">
+			<div class="table-responsive">
+				<table class="table table-bordered table-condensed table-striped table-hover">
+<tbody>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=789">0000789</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=789">The dressup explorer can't be accessed if the \0 character doesn't have dressups</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-06-14 21:20</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=616">0000616</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=616">ゴーストやプラグインにおけるOnOtherGhostTalkイベントでNoContentなイベントも補足できるようにしてほしい</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-12-24 20:01</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=598">0000598</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=598">New z-order options</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-05-23 13:18</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=361">0000361</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=361">x-ukagaka-linkで起動するゴーストを指定したい</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-03-12 18:11</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=582">0000582</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=582">Whitelist mode for delete.txt</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2023-03-07 13:20</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=548">0000548</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=548#attachments" title="View 1 attachment(s) for issue #548"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=548">Extra character balloons can't be dismissed from  balloon test mode</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-10-05 16:53</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=442">0000442</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=442">Optimisation of network updates and homeurl override installation</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-02-27 13:17</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=253">0000253</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=253">narpng</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2022-02-16 11:46</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=392">0000392</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=392">Expand Balloon Test Mode</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-12-19 15:12</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=355">0000355</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=355">Allow user to specify the distance at which ghosts should 'stick' to the taskbar/screen edge</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-11-13 18:08</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=301">0000301</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=301">Allow balloon and shell to have custom dlls to draw the interface</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-10-02 12:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=288">0000288</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=288">New event: rate of use graph within one week</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-09-24 13:52</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=247">0000247</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=247">Some suggestions for speech recognition</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2021-09-10 10:07</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=36">0000036</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=36">【要望】SSPエクスプローラの挙動</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2020-06-14 02:58</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=25">0000025</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=25">ゴースト毎にサブプロセス化</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-06-19 04:37</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=23">0000023</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=23">吹き出しとシェルを前面に表示</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-06-12 04:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=16">0000016</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=16">吹き出しの表示をSNS風にする機能</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2019-05-30 21:43</span>	</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="space-10"></div><div id="recent_mod" class="widget-box widget-color-blue2 ">
+	<div class="widget-header widget-header-small">
+		<h4 class="widget-title lighter">
+			<i class="fa fa-list-alt ace-icon" ></i><a class="white" href="view_all_set.php?type=1&amp;temporary=y&amp;hide_status=none&amp;filter_by_last_updated_date=1&amp;last_updated_end_day=17&amp;last_updated_end_month=6&amp;last_updated_end_year=2026&amp;last_updated_start_day=17&amp;last_updated_start_month=6&amp;last_updated_start_year=2025">Recently Modified (365 Days)</a><span class="badge">  1 - 50 / 146  </span>		</h4>
+		<div class="widget-toolbar">
+			<a data-action="collapse" href="#">
+				<i class="fa fa-chevron-up 1 ace-icon bigger-125" ></i>			</a>
+		</div>
+		<div class="widget-toolbar no-border hidden-xs">
+			<div class="widget-menu">
+				<a class="btn btn-primary btn-white btn-round btn-xs" href="view_all_set.php?type=1&amp;temporary=y&amp;hide_status=none&amp;filter_by_last_updated_date=1&amp;last_updated_end_day=17&amp;last_updated_end_month=6&amp;last_updated_end_year=2026&amp;last_updated_start_day=17&amp;last_updated_start_month=6&amp;last_updated_start_year=2025">View Issues</a>			</div>
+		</div>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-main no-padding">
+			<div class="table-responsive">
+				<table class="table table-bordered table-condensed table-striped table-hover">
+<tbody>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=789">0000789</a><br /><i class="fa fa-square fa-status-box status-10-fg" title="new"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=789">The dressup explorer can't be accessed if the \0 character doesn't have dressups</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-06-14 21:20</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=788">0000788</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=788">2.8.25以降でシェルの定義ミスが出る</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-06-14 15:56</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=787">0000787</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=787#attachments" title="View 1 attachment(s) for issue #787"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=787">Crash at the end of playing sound files</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-06-03 11:59</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=372">0000372</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=372">Allow surfaces to have non-numerical names</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-28 12:43</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=784">0000784</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=784#attachments" title="View 1 attachment(s) for issue #784"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=784">ゴースト「Water Surface」を起動中に  「uncontinuable exception raised. please report the content of &quot;STAKTRC.TXT&quot;to SSP BUGTRAQ.」</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-28 12:42</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=785">0000785</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=785">Optional name attribute for animations</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-28 12:42</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=786">0000786</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=786">バルーンで同梱フォントファイルへの指定が無視される事例がある</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-28 12:41</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=783">0000783</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=783">更新ファイルが正常に作成されない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-20 14:23</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=778">0000778</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=778">「シェル倍率」を下げたときに「当たり判定を表示」の視認性が低下します</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-15 21:14</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=782">0000782</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=782#attachments" title="View 1 attachment(s) for issue #782"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=782">Some part of Options menu text is unreadable in Dark mode</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-11 14:09</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=781">0000781</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=781">バルーンのsstp.pngが\![*]タグで異常な表示になることがある</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-11 14:09</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=776">0000776</a><br /><i class="fa fa-square fa-status-box status-20-fg" title="feedback"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=776">起動時にゴーストを最背面で起動する。</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-08 08:54</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=755">0000755</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=755#attachments" title="View 3 attachment(s) for issue #755"> <i class="fa fa-paperclip fa-lg grey" title="3&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=755">バルーンに時々文字が表示されない事がある</a></span><br />		<span class="small">[All Projects] SSPBT：その他</span><span class="small"> - 2026-05-08 08:52</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=774">0000774</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=774#attachments" title="View 1 attachment(s) for issue #774"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=774">「何とかしてください。」の文章が折り返されない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-06 15:46</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=775">0000775</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=775">動画ウインドウの位置が保存されない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-06 11:28</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=779">0000779</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=779#attachments" title="View 2 attachment(s) for issue #779"> <i class="fa fa-paperclip fa-lg grey" title="2&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=779">VOICEVOX音声合成を使用しようとすると、/synthesisリクエストがtimeoutとなり読み上げに失敗する</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-05-06 11:28</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=780">0000780</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=780">Win+Mで最小化しても少しすると勝手に出てくる。</a></span><br />		<span class="small">[All Projects] SSPBT：ゴースト</span><span class="small"> - 2026-05-06 11:28</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=777">0000777</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=777">C++20以降でコンパイルに失敗する</a></span><br />		<span class="small">[All Projects] 整備班：里々</span><span class="small"> - 2026-05-05 08:45</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=773">0000773</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=773#attachments" title="View 2 attachment(s) for issue #773"> <i class="fa fa-paperclip fa-lg grey" title="2&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=773">マルチディスプレイ環境での本体設定</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-27 04:48</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=772">0000772</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=772">オフラインサーフェスダンプでエラーログの情報が欠落しています</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-22 08:45</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=771">0000771</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=771">sliderinputで負の値を入力するとReferenceが符号なし32bit整数として渡される</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-22 08:43</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=770">0000770</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=770#attachments" title="View 1 attachment(s) for issue #770"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=770">バルーンのSSTPメッセージが出ない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-19 17:19</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=769">0000769</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=769">動画ウインドウの停止ボタンをクリックしても停止しない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-17 21:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=768">0000768</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=768">Separate the toggle for turning off menu thumbnails</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-16 21:08</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=766">0000766</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=766">メディアファイル再生時のエラー</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-15 09:35</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=767">0000767</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=767">Right click menu options repeatx and repeaty have the same effect</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-15 09:34</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=155">0000155</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=155#attachments" title="View 2 attachment(s) for issue #155"> <i class="fa fa-paperclip fa-lg grey" title="2&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=155">Ghosts sometimes stop appearing on top when clicking to another window</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-14 15:41</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=765">0000765</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=765#attachments" title="View 1 attachment(s) for issue #765"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=765">効果音の鳴る場面でSSPがSTACKTRC.TXTを出して落ちる</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-11 05:47</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=763">0000763</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=763#attachments" title="View 1 attachment(s) for issue #763"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=763">サウンドの再生が終わると落ちることがある</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-07 12:42</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=764">0000764</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=764">Sound bar appears when --window=false setting is used</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-07 12:42</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=762">0000762</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=762#attachments" title="View 2 attachment(s) for issue #762"> <i class="fa fa-paperclip fa-lg grey" title="2&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=762">Prevent looping of non-repeating .GIF surfaces</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-04-06 09:28</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=761">0000761</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=761">FREAD関数の返り値に関する問題。「読み込みエラー」と「ファイルの空行」が区別できない？</a></span><br />		<span class="small">[All Projects] 整備班：YAYA</span><span class="small"> - 2026-04-01 11:22</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=759">0000759</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=759">現在時刻の仮想的変更で秒を指定したい</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-31 15:23</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=760">0000760</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=760#attachments" title="View 1 attachment(s) for issue #760"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=760">FREADBINで、ファイル終端に達したときに-1が返されていない？</a></span><br />		<span class="small">[All Projects] 整備班：YAYA</span><span class="small"> - 2026-03-31 15:17</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=758">0000758</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=758">\__qのIDを空にすると選択肢として認識されない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-29 16:43</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=163">0000163</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=163">about thumbnail.png big than screen</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-23 19:35</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=757">0000757</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=757#attachments" title="View 2 attachment(s) for issue #757"> <i class="fa fa-paperclip fa-lg grey" title="2&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=757">Birthday selector forcibly changing date, sets year to 1601</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-22 07:45</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=756">0000756</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=756#attachments" title="View 1 attachment(s) for issue #756"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=756">さくらスクリプト「\c」が効いていない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-20 04:43</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=104">0000104</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=104#attachments" title="View 1 attachment(s) for issue #104"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=104">surfaces.txt overlayfastが透過度を維持しない使用方法があります</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-18 16:15</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=754">0000754</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=754">Unclosed \s[] tags can freeze SSP</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-18 12:47</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=752">0000752</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=752">&quot;Open target directory&quot; button in surface dumper</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-13 15:11</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=236">0000236</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=236">cloud saves of ghost&amp;ssp profile</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-13 15:11</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=617">0000617</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=617#attachments" title="View 1 attachment(s) for issue #617"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=617">Calling functions with %() doesn't seem to be working</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-08 20:55</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=712">0000712</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=712">「となりの羽山さん」の演出が一部機能していない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-08 20:55</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=753">0000753</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=753">マルチディスプレイ環境でゴーストをドラッグしても別のディスプレイへ移動できない</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-08 17:18</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=520">0000520</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=520">dumpsurface for shells that are not in loading</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-07 20:33</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=665">0000665</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i><a class="attachments" href="view.php?id=665#attachments" title="View 1 attachment(s) for issue #665"> <i class="fa fa-paperclip fa-lg grey" title="1&#32;attachment(s)"></i></a>	</td>
+
+		<td>
+		<span><a href="view.php?id=665">辞書内に存在しない関数を呼び出すコードがある場合、引数が指定されていると起動時にエラーとなり起動に失敗する。</a></span><br />		<span class="small">[All Projects] 整備班：YAYA</span><span class="small"> - 2026-03-06 16:41</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=227">0000227</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=227">asking for some basic settings when SSP runs for the first time</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-03 09:01</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=353">0000353</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=353">The ghost window does not show up in some environments</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-03-02 15:58</span>	</td>
+</tr>
+
+<tr class="my-buglist-bug ">
+		<td class="nowrap width-13 my-buglist-id">
+		<a href="/view.php?id=305">0000305</a><br /><i class="fa fa-square fa-status-box status-90-fg" title="closed"></i> <i class="fa fa-minus fa-lg orange2 " title="normal"></i>	</td>
+
+		<td>
+		<span><a href="view.php?id=305">Gives users the option to update ssp automatically and silently</a></span><br />		<span class="small">[All Projects] SSPBT：本体(SSP)</span><span class="small"> - 2026-02-28 13:50</span>	</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="space-10"></div></div>
+
+<div class="col-xs-12 col-md-5">
+	
+<div id="timeline" class="widget-box widget-color-blue2 ">
+	<div class="widget-header widget-header-small">
+		<h4 class="widget-title lighter">
+			<i class="fa fa-clock-o ace-icon" ></i>			Timeline		</h4>
+		<div class="widget-toolbar">
+			<a data-action="collapse" href="#">
+				<i class="fa fa-chevron-up 1 ace-icon bigger-125" ></i>			</a>
+		</div>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-toolbox">
+			<div class="btn-toolbar">
+&#160;&#160;<span class="label label-grey"> 2026-06-10 </span> .. <span class="label label-grey"> 2026-06-17 </span>&#160;&#160;<div class="btn-group"> <a class="btn btn-primary btn-xs btn-white btn-round" href="my_view_page.php?days=7">Prev</a></div>			</div>
+		</div>
+
+		<div class="widget-main no-padding">
+			<div class="profile-feed">
+			</div>
+		</div>
+
+<div class="profile-activity clearfix"><i class="fa fa-plus pull-left thumbicon btn-primary no-hover" ></i><div class="action"><span class="username"><a href="https://bts.shillest.net/view_user_page.php?id=3">guest</a></span> created issue <span class="issue_id"><a href="/view.php?id=789" title="[new] The dressup explorer can't be accessed if the \0 character doesn't have dressups">0000789</a></span></div><div class="time"><i class="fa fa-clock-o ace-icon bigger-110" ></i> 2026-06-14 21:20</div></div><div class="profile-activity clearfix"><i class="fa fa-comment-o pull-left thumbicon btn-primary no-hover" ></i><div class="action"><span class="username"><a href="https://bts.shillest.net/view_user_page.php?id=2">ponapalt</a></span> commented on issue <span class="issue_id"><a href="/view.php?id=788" title="[closed] 2.8.25以降でシェルの定義ミスが出る" class="resolved">0000788</a></span></div><div class="time"><i class="fa fa-clock-o ace-icon bigger-110" ></i> 2026-06-14 15:56</div></div><div class="profile-activity clearfix"><i class="fa fa-power-off pull-left thumbicon btn-primary no-hover" ></i><div class="action"><span class="username"><a href="https://bts.shillest.net/view_user_page.php?id=2">ponapalt</a></span> closed issue <span class="issue_id"><a href="/view.php?id=788" title="[closed] 2.8.25以降でシェルの定義ミスが出る" class="resolved">0000788</a></span></div><div class="time"><i class="fa fa-clock-o ace-icon bigger-110" ></i> 2026-06-14 15:56</div></div><div class="profile-activity clearfix"><i class="fa fa-flag-o pull-left thumbicon btn-primary no-hover" ></i><div class="action"><span class="username"><a href="https://bts.shillest.net/view_user_page.php?id=2">ponapalt</a></span> picked up issue <span class="issue_id"><a href="/view.php?id=788" title="[closed] 2.8.25以降でシェルの定義ミスが出る" class="resolved">0000788</a></span></div><div class="time"><i class="fa fa-clock-o ace-icon bigger-110" ></i> 2026-06-14 15:56</div></div><div class="profile-activity clearfix"><i class="fa fa-plus pull-left thumbicon btn-primary no-hover" ></i><div class="action"><span class="username"><a href="https://bts.shillest.net/view_user_page.php?id=3">guest</a></span> created issue <span class="issue_id"><a href="/view.php?id=788" title="[closed] 2.8.25以降でシェルの定義ミスが出る" class="resolved">0000788</a></span></div><div class="time"><i class="fa fa-clock-o ace-icon bigger-110" ></i> 2026-06-13 19:38</div></div>
+	</div>
+</div>
+	<div class="space-10"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="footer noprint">
+<div class="footer-inner">
+<div class="footer-content">
+<div class="col-md-6 col-xs-12 no-padding">
+<address>
+<strong>Powered by <a href="https://www.mantisbt.org" title="bug tracking software">MantisBT </a></strong> <br>
+<small>Copyright &copy; 2000 - 2026 MantisBT Team</small><br><small>Contact <a href="mailto:ponapalt@shillest.net" title="Contact the webmaster via e-mail.">administrator</a> for assistance</small><br>
+</address>
+</div>
+<div class="col-md-6 col-xs-12">
+<div class="pull-right" id="powered-by-mantisbt-logo">
+<a href="https://www.mantisbt.org" title="Mantis Bug Tracker: a free and open source web based bug tracking system."><img src="/images/mantis_logo.png" width="102" height="35" alt="Powered by Mantis Bug Tracker: a free and open source web based bug tracking system." /></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a class="btn-scroll-up btn btn-sm btn-inverse display" id="btn-scroll-up" href="#">
+<i class="fa fa-angle-double-up ace-icon icon-only bigger-110" ></i>
+</a>
+</div>
+	<script src="/js/bootstrap-3.4.1.min.js"></script>
+	<script src="/js/typeahead.jquery-1.3.4.min.js"></script>
+	<script src="/js/list-2.3.1.min.js"></script>
+	<script src="/js/ace.min.js"></script>
+</body>
+</html>
